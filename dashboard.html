@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Limitless API Management</title>
+    <link rel='icon' type='image/png' href='assets/img/favicon.png'>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+        <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        slate: { 950: '#030014', 900: '#0a0a0f', 800: '#1a1a2e' },
+                        slate: { 950: '#030014' },
                         cyan: { 400: '#c084fc', 500: '#a855f7' }
-                    }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], sora: ['Sora', 'sans-serif'] }
                 }
             }
         }
@@ -20,7 +23,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+        <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            if (theme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.removeAttribute('data-theme');
+            }
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            }
+        })();
+    </script>
+    <link rel='stylesheet' href='assets/css/style.css'>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .sidebar-link.active {
@@ -38,8 +58,8 @@
         <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 hidden md:flex">
             <div class="p-6">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
+                        <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
                     </div>
                     <span class="text-lg font-bold text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
                 </a>
@@ -88,7 +108,7 @@
             
             <div class="p-6 border-t border-slate-800">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center font-bold text-white">AT</div>
+                    <img src="assets/img/consultant.png" alt="Alex Thorne" class="w-10 h-10 rounded-full object-cover">
                     <div>
                         <div class="text-sm font-bold text-white">Alex Thorne</div>
                         <div class="text-[10px] text-slate-500">Free Tier</div>
@@ -107,6 +127,14 @@
                     <p class="text-slate-500 text-sm">Real-time health and traffic distribution across your API fleet.</p>
                 </div>
                 <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <button id="theme-toggle" class="p-2 text-slate-400 hover:text-white transition-colors" title="Toggle Theme">
+                        <i data-lucide="sun" class="w-5 h-5"></i>
+                    </button>
+                    <button id="rtl-toggle" class="p-2 text-slate-400 hover:text-white transition-colors font-bold text-sm" title="Toggle RTL">
+                        RTL
+                    </button>
+                </div>
                     <div class="glass px-4 py-2 rounded-xl flex items-center space-x-3 border-slate-800">
                         <i data-lucide="calendar" class="w-4 h-4 text-slate-500"></i>
                         <span class="text-sm font-medium">Last 24 Hours</span>
@@ -328,8 +356,28 @@
             tooltip: { theme: 'dark' }
         }).render();
     </script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
