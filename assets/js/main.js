@@ -83,6 +83,9 @@
             const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
             
             document.querySelectorAll('nav a').forEach(link => {
+                // Skip brand/logo link
+                if (link.querySelector('.font-sora')) return;
+
                 const href = link.getAttribute('href');
                 if (href === filename) {
                     link.classList.add('nav-link-active');
