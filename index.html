@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limitless API | Premium Rate Limiting & Throttling Consultant</title>
     <link rel='icon' type='image/png' href='assets/img/favicon.png'>
-    <meta name="description" content="Expert API rate limiting, request throttling, and DDoS mitigation consulting for high-scale distributed systems.">
-    
+    <meta name="description"
+        content="Expert API rate limiting, request throttling, and DDoS mitigation consulting for high-scale distributed systems.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-        <script>
+    <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -23,48 +25,53 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- ApexCharts -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    
+
     <!-- Custom Styles -->
-    
-        <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || 'dark';
-            const dir = localStorage.getItem('dir') || 'ltr';
-            if (theme === 'light') {
-                document.documentElement.classList.remove('dark');
-                document.documentElement.setAttribute('data-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                document.documentElement.removeAttribute('data-theme');
-            }
-            if (dir === 'rtl') {
-                document.documentElement.setAttribute('dir', 'rtl');
-            }
-        })();
+
+    <script>
+            (function () {
+                const theme = localStorage.getItem('theme') || 'dark';
+                const dir = localStorage.getItem('dir') || 'ltr';
+                if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                if (dir === 'rtl') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                }
+            })();
     </script>
     <link rel='stylesheet' href='assets/css/style.css'>
 </head>
+
 <body class="bg-slate-950 text-slate-200">
 
     <!-- Header/Navbar -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
+                <div
+                    class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
                     <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span
+                        class="text-cyan-400">API</span></span>
             </a>
-            
+
             <!-- Desktop Nav -->
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
@@ -78,13 +85,18 @@
             </div>
 
             <div class="hidden lg:flex items-center space-x-4">
-                <button id="theme-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300 group" title="Toggle Theme">
+                <button id="theme-toggle"
+                    class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300 group"
+                    title="Toggle Theme">
                     <i data-lucide="sun" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
                 </button>
-                <button id="rtl-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300" title="Toggle RTL">
+                <button id="rtl-toggle"
+                    class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300"
+                    title="Toggle RTL">
                     <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
-                <a href="signup.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
+                <a href="signup.html"
+                    class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
                     Sign Up
                 </a>
             </div>
@@ -96,28 +108,43 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950 border-t border-slate-900 p-8 shadow-2xl">
+        <div id="mobile-menu"
+            class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950 border-t border-slate-900 p-8 shadow-2xl">
             <div class="flex flex-col space-y-6">
-                <a href="index.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home</a>
-                <a href="home-2.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home 2</a>
-                <a href="about.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">About</a>
-                <a href="services.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Services</a>
-                <a href="case-studies.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Case Studies</a>
-                <a href="blog.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Blog</a>
-                <a href="contact.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Contact</a>
-                <a href="dashboard.html" class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Dashboard</a>
-                
+                <a href="index.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home</a>
+                <a href="home-2.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home
+                    2</a>
+                <a href="about.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">About</a>
+                <a href="services.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Services</a>
+                <a href="case-studies.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Case
+                    Studies</a>
+                <a href="blog.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Blog</a>
+                <a href="contact.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Contact</a>
+                <a href="dashboard.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Dashboard</a>
+
                 <div class="grid grid-cols-2 gap-4 py-6 border-t border-slate-900">
-                    <button id="theme-toggle-mobile" class="flex items-center justify-center space-x-3 text-slate-300 bg-slate-900/50 border border-slate-800 px-4 py-4 rounded-2xl hover:bg-slate-800 hover:text-white hover:border-cyan-500/50 transition-all group">
+                    <button id="theme-toggle-mobile"
+                        class="flex items-center justify-center space-x-3 text-slate-300 bg-slate-900/50 border border-slate-800 px-4 py-4 rounded-2xl hover:bg-slate-800 hover:text-white hover:border-cyan-500/50 transition-all group">
                         <i data-lucide="sun" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
                         <span class="font-bold text-sm">Theme</span>
                     </button>
-                    <button id="rtl-toggle-mobile" class="flex items-center justify-center space-x-3 text-slate-300 bg-slate-900/50 border border-slate-800 px-4 py-4 rounded-2xl hover:bg-slate-800 hover:text-white hover:border-cyan-500/50 transition-all">
+                    <button id="rtl-toggle-mobile"
+                        class="flex items-center justify-center space-x-3 text-slate-300 bg-slate-900/50 border border-slate-800 px-4 py-4 rounded-2xl hover:bg-slate-800 hover:text-white hover:border-cyan-500/50 transition-all">
                         <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         <span class="font-bold text-sm">RTL</span>
                     </button>
                 </div>
-                <a href="signup.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-4 rounded-2xl text-center font-bold text-lg shadow-lg shadow-purple-500/20">Sign Up Now</a>
+                <a href="signup.html"
+                    class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-4 rounded-2xl text-center font-bold text-lg shadow-lg shadow-purple-500/20">Sign
+                    Up Now</a>
             </div>
         </div>
     </nav>
@@ -125,25 +152,31 @@
     <!-- Hero Section (Standardized) -->
     <header class="pt-48 pb-32 relative overflow-hidden min-h-[80vh] flex items-center">
         <div class="absolute inset-0 z-0">
-            <img src="hero_bg_network_1778928765412.png" alt="API Network" class="w-full h-full object-cover opacity-40 animate-[pulse-slow_10s_infinite]">
+            <img src="https://images.pexels.com/photos/30767251/pexels-photo-30767251.jpeg" alt="API Network"
+                class="w-full h-full object-cover opacity-40 animate-[pulse-slow_10s_infinite]">
             <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950"></div>
         </div>
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10 animate-on-scroll">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-bold border border-cyan-500/20 mb-8 backdrop-blur-md">
+            <span
+                class="inline-block py-1.5 px-4 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-bold border border-cyan-500/20 mb-8 backdrop-blur-md">
                 API Traffic Optimization & Security
             </span>
             <h1 class="text-5xl md:text-8xl font-bold font-sora text-white mb-8 leading-tight">
-                Protect APIs from <span class="text-gradient-cyan">Abuse</span> Without Adding <span class="text-gradient-purple">Latency</span>
+                Protect APIs from <span class="text-gradient-cyan">Abuse</span> Without Adding <span
+                    class="text-gradient-purple">Latency</span>
             </h1>
             <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
-                Scale your infrastructure with intelligent rate limiting and distributed request throttling designed for modern high-traffic systems.
+                Scale your infrastructure with intelligent rate limiting and distributed request throttling designed for
+                modern high-traffic systems.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="dashboard.html" class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold flex items-center space-x-2 hover:bg-cyan-50 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
+                <a href="dashboard.html"
+                    class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold flex items-center space-x-2 hover:bg-cyan-50 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
                     <span>Explore Policies</span>
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
-                <a href="contact.html" class="glass px-10 py-5 rounded-2xl font-bold border border-white/10 hover:border-cyan-500/50 hover:bg-white/5 hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+                <a href="contact.html"
+                    class="glass px-10 py-5 rounded-2xl font-bold border border-white/10 hover:border-cyan-500/50 hover:bg-white/5 hover:scale-105 hover:-translate-y-1 transition-all duration-300">
                     Start Protection
                 </a>
             </div>
@@ -153,8 +186,10 @@
     <!-- Trusted By -->
     <section class="py-12 border-y border-slate-900 bg-slate-950/50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center text-slate-500 text-sm font-medium uppercase tracking-[0.2em] mb-10">Securing Infrastructure For Global Leaders</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+            <p class="text-center text-slate-500 text-sm font-medium uppercase tracking-[0.2em] mb-10">Securing
+                Infrastructure For Global Leaders</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
                 <span class="text-2xl font-bold text-slate-300">NEXUS<span class="text-cyan-500">PAY</span></span>
                 <span class="text-2xl font-bold text-slate-300">CLOUD<span class="text-purple-500">FLOW</span></span>
                 <span class="text-2xl font-bold text-slate-300">QUANTUM<span class="text-blue-500">API</span></span>
@@ -170,19 +205,24 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-4xl font-bold font-sora text-white mb-4">Precision Throttling Strategies</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Implementing robust algorithms that balance security with user experience, ensuring your services stay responsive under heavy load.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Implementing robust algorithms that balance security with
+                    user experience, ensuring your services stay responsive under heavy load.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-cyan-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
-                    <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 hover:border-cyan-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
+                    <div
+                        class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
                         <i data-lucide="layers" class="text-cyan-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Token Bucket Algorithms</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Support bursty traffic patterns while maintaining a strict long-term average request rate.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Support bursty traffic patterns while maintaining a
+                        strict long-term average request rate.</p>
                     <div class="mt-auto pt-6">
-                        <a href="services.html" class="text-cyan-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
+                        <a href="services.html"
+                            class="text-cyan-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
                             <span>Learn more</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -190,14 +230,18 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-purple-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
-                    <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 hover:border-purple-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
+                    <div
+                        class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="database" class="text-purple-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Distributed Systems Throttling</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Coordinate rate limits across multi-region clusters using high-performance Redis backends.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Coordinate rate limits across multi-region clusters
+                        using high-performance Redis backends.</p>
                     <div class="mt-auto pt-6">
-                        <a href="services.html" class="text-purple-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
+                        <a href="services.html"
+                            class="text-purple-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
                             <span>Learn more</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -205,14 +249,18 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-blue-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 hover:border-blue-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
+                    <div
+                        class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i data-lucide="globe" class="text-blue-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Geo-based Restrictions</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Intelligent traffic shaping based on origin IP, ASN, and regional compliance requirements.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Intelligent traffic shaping based on origin IP, ASN,
+                        and regional compliance requirements.</p>
                     <div class="mt-auto pt-6">
-                        <a href="services.html" class="text-blue-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
+                        <a href="services.html"
+                            class="text-blue-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
                             <span>Learn more</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -220,14 +268,18 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-emerald-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 hover:border-emerald-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
+                    <div
+                        class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
                         <i data-lucide="fingerprint" class="text-emerald-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Abuse Detection</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Machine learning models to identify and block credential stuffing and scraping bots.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Machine learning models to identify and block
+                        credential stuffing and scraping bots.</p>
                     <div class="mt-auto pt-6">
-                        <a href="services.html" class="text-emerald-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
+                        <a href="services.html"
+                            class="text-emerald-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
                             <span>Learn more</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -235,14 +287,18 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-rose-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
-                    <div class="w-14 h-14 bg-rose-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-500/20 transition-colors">
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 hover:border-rose-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
+                    <div
+                        class="w-14 h-14 bg-rose-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-500/20 transition-colors">
                         <i data-lucide="shield-alert" class="text-rose-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">API Gateway Hardening</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Expert configuration for NGINX, Kong, and AWS API Gateway to handle massive loads.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Expert configuration for NGINX, Kong, and AWS API
+                        Gateway to handle massive loads.</p>
                     <div class="mt-auto pt-6">
-                        <a href="services.html" class="text-rose-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
+                        <a href="services.html"
+                            class="text-rose-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
                             <span>Learn more</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -250,14 +306,18 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-amber-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
-                    <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 hover:border-amber-500/50 transition-all group hover:-translate-y-2 flex flex-col items-center text-center h-full">
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
                         <i data-lucide="timer" class="text-amber-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Dynamic Throttling</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Automatically adjust limits based on system health, CPU load, and database latency.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Automatically adjust limits based on system health,
+                        CPU load, and database latency.</p>
                     <div class="mt-auto pt-6">
-                        <a href="services.html" class="text-amber-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
+                        <a href="services.html"
+                            class="text-amber-400 font-semibold flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all">
                             <span>Learn more</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -274,26 +334,29 @@
                 <div class="lg:w-1/2">
                     <h2 class="text-4xl font-bold font-sora text-white mb-6">Observability Meets Enforcement</h2>
                     <p class="text-slate-400 text-lg mb-8">
-                        My custom dashboard solutions provide deep insights into every request lifecycle. See exactly why, where, and when requests are being shaped or blocked.
+                        My custom dashboard solutions provide deep insights into every request lifecycle. See exactly
+                        why, where, and when requests are being shaped or blocked.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-start space-x-3">
                             <i data-lucide="check-circle-2" class="text-cyan-500 w-6 h-6 shrink-0 mt-1"></i>
                             <div>
                                 <h4 class="font-bold text-white">Sub-millisecond Latency Overhead</h4>
-                                <p class="text-slate-400 text-sm">Lightweight enforcement plugins designed for high-throughput edge nodes.</p>
+                                <p class="text-slate-400 text-sm">Lightweight enforcement plugins designed for
+                                    high-throughput edge nodes.</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-3">
                             <i data-lucide="check-circle-2" class="text-cyan-500 w-6 h-6 shrink-0 mt-1"></i>
                             <div>
                                 <h4 class="font-bold text-white">Regional Traffic Heat Maps</h4>
-                                <p class="text-slate-400 text-sm">Visualize traffic distribution and identify regional abuse patterns instantly.</p>
+                                <p class="text-slate-400 text-sm">Visualize traffic distribution and identify regional
+                                    abuse patterns instantly.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="lg:w-1/2 w-full">
                     <div class="glass-dark p-6 rounded-3xl border-slate-800 shadow-2xl relative">
                         <!-- Mock Dashboard Header -->
@@ -303,13 +366,15 @@
                                 <div class="text-xs text-slate-500">Updates every 2 seconds</div>
                             </div>
                             <div class="flex space-x-2">
-                                <span class="bg-emerald-500/10 text-emerald-500 text-[10px] px-2 py-1 rounded-full border border-emerald-500/20">OPERATIONAL</span>
-                                <span class="bg-cyan-500/10 text-cyan-500 text-[10px] px-2 py-1 rounded-full border border-cyan-500/20">v2.4.0-edge</span>
+                                <span
+                                    class="bg-emerald-500/10 text-emerald-500 text-[10px] px-2 py-1 rounded-full border border-emerald-500/20">OPERATIONAL</span>
+                                <span
+                                    class="bg-cyan-500/10 text-cyan-500 text-[10px] px-2 py-1 rounded-full border border-cyan-500/20">v2.4.0-edge</span>
                             </div>
                         </div>
-                        
+
                         <div id="monitoring-chart" class="h-[320px] -mx-4 overflow-hidden"></div>
-                        
+
                         <div class="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-800">
                             <div class="text-center">
                                 <div class="text-[10px] text-slate-500 uppercase mb-1">P99 Latency</div>
@@ -335,9 +400,10 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold font-sora text-white mb-4">Resilience Against Layer 7 Attacks</h2>
-                <p class="text-slate-400">Filtering malicious bursts while keeping the door open for legitimate users.</p>
+                <p class="text-slate-400">Filtering malicious bursts while keeping the door open for legitimate users.
+                </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass p-8 rounded-3xl border-rose-500/20 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4">
@@ -401,7 +467,7 @@
                 <h2 class="text-4xl font-bold font-sora text-white mb-4">Monetize Your API With Confidence</h2>
                 <p class="text-slate-400">Implement tiered access controls that scale with your business tiers.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-4 gap-6">
                 <!-- Tier 1 -->
                 <div class="glass p-6 rounded-2xl border-slate-800 hover:border-slate-700 transition-all">
@@ -427,7 +493,9 @@
 
                 <!-- Tier 2 -->
                 <div class="glass p-6 rounded-2xl border-cyan-500/30 relative shadow-xl">
-                    <div class="absolute -top-3 right-4 bg-cyan-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">POPULAR</div>
+                    <div
+                        class="absolute -top-3 right-4 bg-cyan-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                        POPULAR</div>
                     <h4 class="text-lg font-bold text-white mb-4">Startup</h4>
                     <div class="space-y-3 mb-6">
                         <div class="flex justify-between text-xs">
@@ -523,32 +591,44 @@
             <div class="text-center mb-20">
                 <h2 class="text-4xl font-bold font-sora text-white">Words From The Frontend</h2>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-3xl border-slate-800 flex flex-col h-full group hover:border-cyan-500/30 transition-all">
-                    <p class="italic text-slate-300 leading-relaxed mb-8">"The distributed throttling architecture implemented by Limitless API solved our multi-region inventory synchronization issue overnight. Performance is rock solid."</p>
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 flex flex-col h-full group hover:border-cyan-500/30 transition-all">
+                    <p class="italic text-slate-300 leading-relaxed mb-8">"The distributed throttling architecture
+                        implemented by Limitless API solved our multi-region inventory synchronization issue overnight.
+                        Performance is rock solid."</p>
                     <div class="flex items-center space-x-4 mt-auto not-italic">
-                        <img src="assets/img/p1.png" alt="David Chen" class="w-12 h-12 rounded-full object-cover border-2 border-slate-800 group-hover:border-cyan-500 transition-colors">
+                        <img src="assets/img/p1.png" alt="David Chen"
+                            class="w-12 h-12 rounded-full object-cover border-2 border-slate-800 group-hover:border-cyan-500 transition-colors">
                         <div>
                             <div class="font-bold text-white">David Chen</div>
                             <div class="text-xs text-slate-500">CTO, NexaPay</div>
                         </div>
                     </div>
                 </div>
-                <div class="glass p-8 rounded-3xl border-slate-800 flex flex-col h-full group hover:border-purple-500/30 transition-all">
-                    <p class="italic text-slate-300 leading-relaxed mb-8">"We were losing thousands to credential stuffing. The abuse detection policies we deployed have blocked 99.8% of malicious attempts without a single false positive."</p>
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 flex flex-col h-full group hover:border-purple-500/30 transition-all">
+                    <p class="italic text-slate-300 leading-relaxed mb-8">"We were losing thousands to credential
+                        stuffing. The abuse detection policies we deployed have blocked 99.8% of malicious attempts
+                        without a single false positive."</p>
                     <div class="flex items-center space-x-4 mt-auto not-italic">
-                        <img src="assets/img/p2.png" alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover border-2 border-slate-800 group-hover:border-purple-500 transition-colors">
+                        <img src="assets/img/p2.png" alt="Sarah Jenkins"
+                            class="w-12 h-12 rounded-full object-cover border-2 border-slate-800 group-hover:border-purple-500 transition-colors">
                         <div>
                             <div class="font-bold text-white">Sarah Jenkins</div>
                             <div class="text-xs text-slate-500">DevOps Lead, CloudFlow</div>
                         </div>
                     </div>
                 </div>
-                <div class="glass p-8 rounded-3xl border-slate-800 flex flex-col h-full group hover:border-blue-500/30 transition-all">
-                    <p class="italic text-slate-300 leading-relaxed mb-8">"Rate limiting usually adds latency. With this implementation, we actually saw an improvement in overall system stability and faster response times for real users."</p>
+                <div
+                    class="glass p-8 rounded-3xl border-slate-800 flex flex-col h-full group hover:border-blue-500/30 transition-all">
+                    <p class="italic text-slate-300 leading-relaxed mb-8">"Rate limiting usually adds latency. With this
+                        implementation, we actually saw an improvement in overall system stability and faster response
+                        times for real users."</p>
                     <div class="flex items-center space-x-4 mt-auto not-italic">
-                        <img src="assets/img/p3.png" alt="Marcus Thorne" class="w-12 h-12 rounded-full object-cover border-2 border-slate-800 group-hover:border-blue-500 transition-colors">
+                        <img src="assets/img/p3.png" alt="Marcus Thorne"
+                            class="w-12 h-12 rounded-full object-cover border-2 border-slate-800 group-hover:border-blue-500 transition-colors">
                         <div>
                             <div class="font-bold text-white">Marcus Thorne</div>
                             <div class="text-xs text-slate-500">Platform Architect, QuantumAPI</div>
@@ -568,63 +648,94 @@
                     What's the difference between Token Bucket and Leaky Bucket?
                     <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                 </summary>
-                <p class="mt-4 text-slate-400">Token Bucket allows for short bursts of traffic while maintaining a fixed average rate, whereas Leaky Bucket forces a steady, constant flow of requests, which is stricter but can increase latency for legitimate bursts.</p>
+                <p class="mt-4 text-slate-400">Token Bucket allows for short bursts of traffic while maintaining a fixed
+                    average rate, whereas Leaky Bucket forces a steady, constant flow of requests, which is stricter but
+                    can increase latency for legitimate bursts.</p>
             </details>
             <details class="glass p-6 rounded-2xl border-slate-800 group">
                 <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-white">
                     Can you implement rate limiting for GraphQL APIs?
                     <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                 </summary>
-                <p class="mt-4 text-slate-400">Yes, GraphQL requires cost-based rate limiting rather than simple request counts. I specialize in complexity-based throttling that analyzes query depth and field counts before execution.</p>
+                <p class="mt-4 text-slate-400">Yes, GraphQL requires cost-based rate limiting rather than simple request
+                    counts. I specialize in complexity-based throttling that analyzes query depth and field counts
+                    before execution.</p>
             </details>
             <details class="glass p-6 rounded-2xl border-slate-800 group">
                 <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-white">
                     How do you handle DDoS attacks at the application layer?
                     <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                 </summary>
-                <p class="mt-4 text-slate-400">I use a combination of IP reputation scoring, behavioral analysis, and challenge-response (CAPTCHA/Proof of Work) to filter out botnets before they reach your backend services.</p>
+                <p class="mt-4 text-slate-400">I use a combination of IP reputation scoring, behavioral analysis, and
+                    challenge-response (CAPTCHA/Proof of Work) to filter out botnets before they reach your backend
+                    services.</p>
             </details>
         </div>
     </section>
 
     <!-- CTA Banner -->
     <section class="py-24 px-6">
-        <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10"></div>
-            <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Secure your APIs before attackers <span class="text-cyan-400">test your limits.</span></h2>
+        <div
+            class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10">
+            </div>
+            <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Secure your APIs before attackers <span
+                    class="text-cyan-400">test your limits.</span></h2>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-                <a href="contact.html" class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-cyan-50 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300">Book a Free Consultation</a>
-                <a href="services.html" class="glass px-10 py-5 rounded-2xl font-bold text-lg border border-slate-700 hover:border-cyan-500/50 hover:bg-white/5 hover:scale-105 hover:-translate-y-1 transition-all duration-300">Explore Services</a>
+                <a href="contact.html"
+                    class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-cyan-50 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300">Book
+                    a Free Consultation</a>
+                <a href="services.html"
+                    class="glass px-10 py-5 rounded-2xl font-bold text-lg border border-slate-700 hover:border-cyan-500/50 hover:bg-white/5 hover:scale-105 hover:-translate-y-1 transition-all duration-300">Explore
+                    Services</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 pt-20 pb-10 transition-colors duration-300">
+    <footer
+        class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 pt-20 pb-10 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-20">
             <div class="sm:col-span-2 md:col-span-3 lg:col-span-2">
                 <a href="index.html" class="flex items-center space-x-2 mb-6">
-                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan shrink-0">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan shrink-0">
                         <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
                     </div>
-                    <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+                    <span
+                        class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-sora">Limitless<span
+                            class="text-cyan-400">API</span></span>
                 </a>
-                <p class="text-slate-500 mb-6 max-w-sm">Leading the industry in API resilience, request shaping, and distributed system protection. Built for the modern cloud.</p>
+                <p class="text-slate-500 mb-6 max-w-sm">Leading the industry in API resilience, request shaping, and
+                    distributed system protection. Built for the modern cloud.</p>
                 <div class="flex space-x-4">
                     <a href="#" class="social-icon-premium" title="Facebook">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
                     </a>
                     <a href="#" class="social-icon-premium" title="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
                     </a>
                     <a href="#" class="social-icon-premium" title="GitHub">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
                     </a>
                 </div>
             </div>
-            
+
             <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Services</h4>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Services
+                </h4>
                 <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
                     <li><a href="#" class="hover:text-cyan-400 transition-colors">Rate Limiting</a></li>
                     <li><a href="#" class="hover:text-cyan-400 transition-colors">DDoS Mitigation</a></li>
@@ -632,9 +743,10 @@
                     <li><a href="#" class="hover:text-cyan-400 transition-colors">API Gateway</a></li>
                 </ul>
             </div>
-            
+
             <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Resources</h4>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Resources
+                </h4>
                 <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
                     <li><a href="#" class="hover:text-cyan-400 transition-colors">Documentation</a></li>
                     <li><a href="#" class="hover:text-cyan-400 transition-colors">Security Blog</a></li>
@@ -642,20 +754,24 @@
                     <li><a href="#" class="hover:text-cyan-400 transition-colors">Status Page</a></li>
                 </ul>
             </div>
-            
+
             <div class="md:col-span-3 lg:col-span-1">
-                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Newsletter
+                </h4>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Get security updates and scaling tips.</p>
                 <form class="flex group max-w-sm">
-                    <input type="email" placeholder="Email Address" class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 border-r-0 rounded-l-2xl px-5 py-3 text-sm flex-1 min-w-0 outline-none focus:border-purple-500/50 transition-all text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600">
-                    <button class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 rounded-r-2xl hover:opacity-90 transition-all flex items-center justify-center shadow-lg shadow-purple-500/20 shrink-0">
+                    <input type="email" placeholder="Email Address"
+                        class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 border-r-0 rounded-l-2xl px-5 py-3 text-sm flex-1 min-w-0 outline-none focus:border-purple-500/50 transition-all text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600">
+                    <button
+                        class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 rounded-r-2xl hover:opacity-90 transition-all flex items-center justify-center shadow-lg shadow-purple-500/20 shrink-0">
                         <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
                 </form>
             </div>
         </div>
-        
-        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-slate-600 text-xs">
+
+        <div
+            class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-slate-600 text-xs">
             <p>&copy; 2026 Limitless API Consulting. All rights reserved.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" class="hover:text-white">Privacy Policy</a>
@@ -692,14 +808,14 @@
                 }
             },
             dataLabels: { enabled: false },
-            grid: { 
-                borderColor: 'rgba(255,255,255,0.05)', 
+            grid: {
+                borderColor: 'rgba(255,255,255,0.05)',
                 strokeDashArray: 4,
                 padding: { bottom: 10, top: 10 }
             },
             xaxis: {
                 categories: ['12:00', '12:05', '12:10', '12:15', '12:20', '12:25', '12:30', '12:35', '12:40', '12:45', '12:50', '12:55'],
-                labels: { 
+                labels: {
                     show: true,
                     rotate: -45,
                     style: { colors: '#64748b', fontSize: '10px' }
@@ -720,29 +836,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
