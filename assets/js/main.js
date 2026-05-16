@@ -1,4 +1,4 @@
-// Main JS Engine for Limitless API Platform
+// Main JS Engine for Flux Platform
 // Handles Theme, RTL, Sticky Navbar, and Interactive Components
 
 (function() {
