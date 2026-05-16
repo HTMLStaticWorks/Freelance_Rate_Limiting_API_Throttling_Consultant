@@ -163,6 +163,11 @@
     transform: rotate(180deg);
 }
 
+[dir="rtl"] #back-to-top {
+    right: auto;
+    left: 30px;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
@@ -310,3 +315,90 @@ body {
     background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(67, 56, 202, 0.1) 0%, transparent 40%);
 }
+
+/* Premium Navbar Toggle Buttons */
+#theme-toggle, #rtl-toggle, #theme-toggle-mobile, #rtl-toggle-mobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+}
+
+#theme-toggle:hover, #rtl-toggle:hover, #theme-toggle-mobile:hover, #rtl-toggle-mobile:hover {
+    background: rgba(168, 85, 247, 0.1);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+}
+
+#theme-toggle:hover i, #theme-toggle-mobile:hover i {
+    transform: rotate(20deg) scale(1.1);
+    color: #a855f7;
+}
+
+#rtl-toggle:hover, #rtl-toggle-mobile:hover {
+    color: #a855f7 !important;
+    letter-spacing: 1px;
+}
+
+[data-theme="light"] #theme-toggle:hover, 
+[data-theme="light"] #rtl-toggle:hover,
+[data-theme="light"] #theme-toggle-mobile:hover, 
+[data-theme="light"] #rtl-toggle-mobile:hover {
+    background: rgba(168, 85, 247, 0.08);
+    color: #a855f7 !important;
+}
+
+#theme-toggle:active, #rtl-toggle:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #a855f7 0%, #4338ca 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:not(.show) {
+    transform: translateY(20px);
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(168, 85, 247, 0.5);
+}
+
+#back-to-top i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5px;
+}
+
+[data-theme="light"] #back-to-top {
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.2);
+}
+

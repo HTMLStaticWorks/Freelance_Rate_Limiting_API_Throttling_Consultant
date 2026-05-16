@@ -77,6 +77,25 @@
             handleScroll(); // Initial check
         }
 
+        // --- BACK TO TOP ENGINE ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
         // --- ACTIVE NAV ENGINE ---
         const updateActiveNav = () => {
             const currentPath = window.location.pathname;
