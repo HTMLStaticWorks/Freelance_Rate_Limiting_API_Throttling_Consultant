@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Limitless API Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 950: '#030014' },
+                        cyan: { 400: '#c084fc', 500: '#a855f7' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- Header (Same as index.html) -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6 glass-dark">
+        <!-- (Full navbar content) -->
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
+                    <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
+                <a href="about.html" class="text-cyan-400 transition-colors">About</a>
+                <a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="case-studies.html" class="hover:text-cyan-400 transition-colors">Case Studies</a>
+                <a href="blog.html" class="hover:text-cyan-400 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
+                <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="login.html" class="text-slate-300 hover:text-white px-4 py-2">Login</a>
+                <a href="dashboard.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">Deploy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 bg-grid relative">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold font-sora text-white mb-6">Securing the <span class="text-gradient-cyan">Global Request</span> Stream</h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">I'm Alex Thorne, a specialized infrastructure consultant dedicated to solving the most complex API traffic challenges for the world's most demanding platforms.</p>
+        </div>
+    </header>
+
+    <!-- Consultant Intro Section -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="aspect-square glass rounded-[3rem] border-slate-800 relative overflow-hidden group">
+                    <img src="assets/images/consultant.png" alt="Alex Thorne" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-10 -right-10 glass p-8 rounded-3xl border-cyan-500/30 animate-float">
+                    <div class="text-4xl font-bold text-white mb-2">10+</div>
+                    <div class="text-xs text-slate-500 uppercase font-bold tracking-widest">Years Experience</div>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="text-3xl font-bold font-sora text-white mb-6">Security Philosophy</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    In a world of distributed systems, rate limiting isn't just a defensive measure—it's a critical component of platform stability and fair resource allocation. 
+                </p>
+                <p class="text-slate-400 mb-8 leading-relaxed">
+                    My approach combines deep network engineering expertise with modern software development practices. I don't just "set limits"; I engineer request lifecycle management systems that scale horizontally and fail gracefully.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-6 glass rounded-2xl border-slate-800">
+                        <div class="text-cyan-400 font-bold mb-1 uppercase text-xs">Certified</div>
+                        <div class="text-white font-bold">AWS Security Specialist</div>
+                    </div>
+                    <div class="p-6 glass rounded-2xl border-slate-800">
+                        <div class="text-purple-400 font-bold mb-1 uppercase text-xs">Certified</div>
+                        <div class="text-white font-bold">Kubernetes Admin (CKA)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Grid -->
+    <section class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold font-sora text-center text-white mb-16">Infrastructure Expertise</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
+                    <i data-lucide="terminal" class="w-8 h-8 text-cyan-400 mx-auto mb-4"></i>
+                    <h4 class="font-bold text-white">Nginx/OpenResty</h4>
+                    <p class="text-xs text-slate-500 mt-2">Custom Lua modules for high-performance edge logic.</p>
+                </div>
+                <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
+                    <i data-lucide="database" class="text-purple-400 mx-auto mb-4"></i>
+                    <h4 class="font-bold text-white">Redis/Valkey</h4>
+                    <p class="text-xs text-slate-500 mt-2">Distributed state management for global rate syncing.</p>
+                </div>
+                <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
+                    <i data-lucide="cloud" class="text-blue-400 mx-auto mb-4"></i>
+                    <h4 class="font-bold text-white">Envoy Proxy</h4>
+                    <p class="text-xs text-slate-500 mt-2">Service mesh traffic management and Wasm plugins.</p>
+                </div>
+                <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
+                    <i data-lucide="layout" class="text-emerald-400 mx-auto mb-4"></i>
+                    <h4 class="font-bold text-white">API Gateways</h4>
+                    <p class="text-xs text-slate-500 mt-2">Kong, Tyk, and AWS/GCP native gateway optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold font-sora text-center text-white mb-16">Professional Journey</h2>
+            <div class="space-y-12 relative before:absolute before:left-0 md:before:left-1/2 before:w-0.5 before:h-full before:bg-slate-800">
+                <!-- Year 1 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                        <div class="text-cyan-400 font-bold mb-2">2023 - Present</div>
+                        <h4 class="text-xl font-bold text-white">Founder, Limitless API</h4>
+                        <p class="text-slate-400 text-sm mt-2">Specialized consulting for Fortune 500 fintech and SaaS platforms, focusing on API security and scaling.</p>
+                    </div>
+                    <div class="w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-950 z-10 absolute left-0 md:left-1/2 -translate-x-1/2"></div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+                
+                <!-- Year 2 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-950 z-10 absolute left-0 md:left-1/2 -translate-x-1/2"></div>
+                    <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0">
+                        <div class="text-purple-400 font-bold mb-2">2019 - 2023</div>
+                        <h4 class="text-xl font-bold text-white">Principal Engineer, CloudScale</h4>
+                        <p class="text-slate-400 text-sm mt-2">Led the platform security team, managing infrastructure that handled 100k+ RPS for global clients.</p>
+                    </div>
+                </div>
+
+                <!-- Year 3 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                        <div class="text-blue-400 font-bold mb-2">2015 - 2019</div>
+                        <h4 class="text-xl font-bold text-white">SRE, GlobalGate</h4>
+                        <p class="text-slate-400 text-sm mt-2">Focused on DDoS mitigation and WAF implementation for large-scale e-commerce systems.</p>
+                    </div>
+                    <div class="w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-950 z-10 absolute left-0 md:left-1/2 -translate-x-1/2"></div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-slate-800 text-center relative overflow-hidden">
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-cyan-500/10 blur-[100px] rounded-full"></div>
+            <h2 class="text-4xl font-bold font-sora text-white mb-8">My Mission</h2>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                "To empower developers and organizations with the tools and knowledge to build resilient, high-performance APIs that remain secure under any load."
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10"></div>
+            <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Secure your APIs before attackers <span class="text-cyan-400">test your limits.</span></h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="contact.html" class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-cyan-50 transition-all shadow-xl">Book a Free Consultation</a>
+                <a href="services.html" class="glass px-10 py-5 rounded-2xl font-bold text-lg border border-slate-700 hover:border-white transition-all">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
+            <div class="col-span-2">
+                <a href="index.html" class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+                </a>
+                <p class="text-slate-500 mb-6 max-w-sm">Leading the industry in API resilience, request shaping, and distributed system protection. Built for the modern cloud.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Services</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-cyan-400">Rate Limiting</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">DDoS Mitigation</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Traffic Shaping</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">API Gateway</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Resources</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-cyan-400">Documentation</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Security Blog</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">API Reference</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Status Page</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
+                <p class="text-xs text-slate-500 mb-4">Get security updates and scaling tips.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Email" class="glass-dark border-slate-800 rounded-l-xl px-4 py-2 text-sm w-full outline-none focus:border-cyan-500">
+                    <button class="bg-cyan-500 text-white px-4 rounded-r-xl hover:bg-cyan-400"><i data-lucide="send" class="w-4 h-4"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-900 flex flex-col md:row justify-between items-center text-slate-600 text-xs">
+            <p>&copy; 2026 Limitless API Consulting. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">SLA</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+
+
+
+
+

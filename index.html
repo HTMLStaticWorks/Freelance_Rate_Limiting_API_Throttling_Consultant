@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limitless API | Premium Rate Limiting & Throttling Consultant</title>
+    <meta name="description" content="Expert API rate limiting, request throttling, and DDoS mitigation consulting for high-scale distributed systems.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#030014',
+                        },
+                        cyan: {
+                            400: '#c084fc',
+                            500: '#a855f7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- Header/Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
+                    <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
+                <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="case-studies.html" class="hover:text-cyan-400 transition-colors">Case Studies</a>
+                <a href="blog.html" class="hover:text-cyan-400 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
+                <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="login.html" class="text-slate-300 hover:text-white px-4 py-2">Login</a>
+                <a href="dashboard.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
+                    Deploy Policy
+                </a>
+            </div>
+
+            <!-- Mobile Menu Btn -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-dark border-t border-slate-800 p-6">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-lg">Home</a>
+                <a href="home-2.html" class="text-lg">Home 2</a>
+                <a href="about.html" class="text-lg">About</a>
+                <a href="services.html" class="text-lg">Services</a>
+                <a href="case-studies.html" class="text-lg">Case Studies</a>
+                <a href="blog.html" class="text-lg">Blog</a>
+                <a href="contact.html" class="text-lg">Contact</a>
+                <a href="dashboard.html" class="text-lg">Dashboard</a>
+                <hr class="border-slate-800">
+                <a href="login.html" class="text-lg">Login</a>
+                <a href="dashboard.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-3 rounded-xl text-center">Deploy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 overflow-hidden bg-grid">
+        <div class="absolute inset-0 hero-mesh -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-semibold border border-cyan-500/20 mb-6">
+                    API Traffic Optimization & Security
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold font-sora leading-tight text-white mb-6">
+                    Protect APIs from <span class="text-gradient-cyan">Abuse</span> Without Adding <span class="text-gradient-purple">Latency</span>
+                </h1>
+                <p class="text-xl text-slate-400 mb-10 max-w-lg leading-relaxed">
+                    Scale your infrastructure with intelligent rate limiting and distributed request throttling designed for modern high-traffic systems.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="dashboard.html" class="bg-white text-slate-950 px-8 py-4 rounded-xl font-bold flex items-center space-x-2 hover:bg-cyan-50 transition-all">
+                        <span>View Policies</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="contact.html" class="glass px-8 py-4 rounded-xl font-bold border border-slate-700 hover:border-cyan-500/50 transition-all">
+                        Start Protection
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <!-- Animated Traffic Visual -->
+                <div class="glass p-8 rounded-3xl border-slate-800 relative z-10 glow-cyan">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-cyan-500 animate-pulse"></div>
+                            <span class="text-sm font-mono text-cyan-400">LIVE TRAFFIC GATEWAY</span>
+                        </div>
+                        <div class="text-xs text-slate-500">ms-west-2 region</div>
+                    </div>
+                    <div id="hero-chart" class="h-64"></div>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="bg-slate-900/50 p-4 rounded-2xl border border-slate-800">
+                            <div class="text-slate-500 text-xs mb-1 uppercase tracking-wider">Requests/sec</div>
+                            <div class="text-2xl font-bold text-white counter" data-target="12450">0</div>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-2xl border border-slate-800">
+                            <div class="text-slate-500 text-xs mb-1 uppercase tracking-wider">Blocked (429)</div>
+                            <div class="text-2xl font-bold text-rose-500 counter" data-target="842">0</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Glowing Cards -->
+                <div class="absolute -top-10 -right-10 glass p-4 rounded-2xl border-slate-800 animate-float z-20 hidden lg:block">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-emerald-500/20 p-2 rounded-lg">
+                            <i data-lucide="activity" class="text-emerald-500 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-slate-500 uppercase tracking-tighter">System Health</div>
+                            <div class="text-sm font-bold">99.999%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-10 -left-10 glass p-4 rounded-2xl border-slate-800 animate-float [animation-delay:1s] z-20 hidden lg:block">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-purple-500/20 p-2 rounded-lg">
+                            <i data-lucide="zap" class="text-purple-500 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-slate-500 uppercase tracking-tighter">Avg. Latency</div>
+                            <div class="text-sm font-bold">0.45 ms</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trusted By -->
+    <section class="py-12 border-y border-slate-900 bg-slate-950/50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-slate-500 text-sm font-medium uppercase tracking-[0.2em] mb-10">Securing Infrastructure For Global Leaders</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                <span class="text-2xl font-bold text-slate-300">NEXUS<span class="text-cyan-500">PAY</span></span>
+                <span class="text-2xl font-bold text-slate-300">CLOUD<span class="text-purple-500">FLOW</span></span>
+                <span class="text-2xl font-bold text-slate-300">QUANTUM<span class="text-blue-500">API</span></span>
+                <span class="text-2xl font-bold text-slate-300">VOID<span class="text-rose-500">SEC</span></span>
+                <span class="text-2xl font-bold text-slate-300">CORE<span class="text-emerald-500">GATE</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold font-sora text-white mb-4">Precision Throttling Strategies</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Implementing robust algorithms that balance security with user experience, ensuring your services stay responsive under heavy load.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-cyan-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                        <i data-lucide="layers" class="text-cyan-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Token Bucket Algorithms</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Support bursty traffic patterns while maintaining a strict long-term average request rate.</p>
+                    <a href="services.html" class="text-cyan-400 font-semibold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+                        <span>Learn more</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-purple-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="database" class="text-purple-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Distributed Systems Throttling</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Coordinate rate limits across multi-region clusters using high-performance Redis backends.</p>
+                    <a href="services.html" class="text-purple-400 font-semibold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+                        <span>Learn more</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-blue-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="globe" class="text-blue-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Geo-based Restrictions</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Intelligent traffic shaping based on origin IP, ASN, and regional compliance requirements.</p>
+                    <a href="services.html" class="text-blue-400 font-semibold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+                        <span>Learn more</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- More Cards -->
+                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-emerald-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
+                        <i data-lucide="fingerprint" class="text-emerald-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Abuse Detection</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Machine learning models to identify and block credential stuffing and scraping bots.</p>
+                    <a href="services.html" class="text-emerald-400 font-semibold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+                        <span>Learn more</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-rose-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-rose-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-500/20 transition-colors">
+                        <i data-lucide="shield-alert" class="text-rose-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">API Gateway Hardening</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Expert configuration for NGINX, Kong, and AWS API Gateway to handle massive loads.</p>
+                    <a href="services.html" class="text-rose-400 font-semibold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+                        <span>Learn more</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border-slate-800 hover:border-amber-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
+                        <i data-lucide="timer" class="text-amber-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Dynamic Throttling</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Automatically adjust limits based on system health, CPU load, and database latency.</p>
+                    <a href="services.html" class="text-amber-400 font-semibold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+                        <span>Learn more</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Monitoring Dashboard Style Section -->
+    <section class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold font-sora text-white mb-6">Observability Meets Enforcement</h2>
+                    <p class="text-slate-400 text-lg mb-8">
+                        My custom dashboard solutions provide deep insights into every request lifecycle. See exactly why, where, and when requests are being shaped or blocked.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="check-circle-2" class="text-cyan-500 w-6 h-6 shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Sub-millisecond Latency Overhead</h4>
+                                <p class="text-slate-400 text-sm">Lightweight enforcement plugins designed for high-throughput edge nodes.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="check-circle-2" class="text-cyan-500 w-6 h-6 shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Regional Traffic Heat Maps</h4>
+                                <p class="text-slate-400 text-sm">Visualize traffic distribution and identify regional abuse patterns instantly.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="lg:w-1/2 w-full">
+                    <div class="glass-dark p-6 rounded-3xl border-slate-800 shadow-2xl relative">
+                        <!-- Mock Dashboard Header -->
+                        <div class="flex justify-between items-center mb-8">
+                            <div>
+                                <h3 class="text-lg font-bold">API Traffic Monitor</h3>
+                                <div class="text-xs text-slate-500">Updates every 2 seconds</div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <span class="bg-emerald-500/10 text-emerald-500 text-[10px] px-2 py-1 rounded-full border border-emerald-500/20">OPERATIONAL</span>
+                                <span class="bg-cyan-500/10 text-cyan-500 text-[10px] px-2 py-1 rounded-full border border-cyan-500/20">v2.4.0-edge</span>
+                            </div>
+                        </div>
+                        
+                        <div id="monitoring-chart" class="h-64"></div>
+                        
+                        <div class="grid grid-cols-3 gap-4 mt-8">
+                            <div class="text-center">
+                                <div class="text-[10px] text-slate-500 uppercase mb-1">P99 Latency</div>
+                                <div class="text-lg font-bold text-cyan-400">12ms</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-[10px] text-slate-500 uppercase mb-1">429 Errors</div>
+                                <div class="text-lg font-bold text-rose-500">1.2%</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-[10px] text-slate-500 uppercase mb-1">Throughput</div>
+                                <div class="text-lg font-bold text-white">850k rpm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DDoS Mitigation Showcase -->
+    <section class="py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-sora text-white mb-4">Resilience Against Layer 7 Attacks</h2>
+                <p class="text-slate-400">Filtering malicious bursts while keeping the door open for legitimate users.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass p-8 rounded-3xl border-rose-500/20 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4">
+                        <i data-lucide="shield-off" class="text-rose-500/20 w-24 h-24"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-rose-500 mb-4">Without Protection</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-rose-500 w-[95%]"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-500">
+                            <span>CPU Usage</span>
+                            <span>95% (CRITICAL)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="x" class="text-rose-500 w-4 h-4"></i>
+                            <span>Services unavailable during bursts</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="x" class="text-rose-500 w-4 h-4"></i>
+                            <span>Infrastructure costs skyrocket</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border-emerald-500/20 relative overflow-hidden group glow-emerald">
+                    <div class="absolute top-0 right-0 p-4">
+                        <i data-lucide="shield-check" class="text-emerald-500/20 w-24 h-24"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-emerald-500 mb-4">With Limitless API</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500 w-[25%] animate-pulse"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-500">
+                            <span>CPU Usage</span>
+                            <span>25% (STABLE)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="check" class="text-emerald-500 w-4 h-4"></i>
+                            <span>Malicious traffic dropped at the edge</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="check" class="text-emerald-500 w-4 h-4"></i>
+                            <span>Zero impact on legitimate traffic</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tiered API Access Section -->
+    <section class="py-24 bg-grid relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-sora text-white mb-4">Monetize Your API With Confidence</h2>
+                <p class="text-slate-400">Implement tiered access controls that scale with your business tiers.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Tier 1 -->
+                <div class="glass p-6 rounded-2xl border-slate-800 hover:border-slate-700 transition-all">
+                    <h4 class="text-lg font-bold text-white mb-4">Free Tier</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Rate Limit</span>
+                            <span class="text-white">100 req/min</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Burst</span>
+                            <span class="text-white">20 req</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Auth Level</span>
+                            <span class="text-white">API Key</span>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-slate-800 rounded-full w-full">
+                        <div class="h-full bg-slate-600 w-1/4"></div>
+                    </div>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="glass p-6 rounded-2xl border-cyan-500/30 relative shadow-xl">
+                    <div class="absolute -top-3 right-4 bg-cyan-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">POPULAR</div>
+                    <h4 class="text-lg font-bold text-white mb-4">Startup</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Rate Limit</span>
+                            <span class="text-white">5k req/min</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Burst</span>
+                            <span class="text-white">500 req</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Auth Level</span>
+                            <span class="text-white">JWT / OAuth2</span>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-slate-800 rounded-full w-full">
+                        <div class="h-full bg-cyan-500 w-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="glass p-6 rounded-2xl border-purple-500/30">
+                    <h4 class="text-lg font-bold text-white mb-4">Enterprise</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Rate Limit</span>
+                            <span class="text-white">Unlimited*</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Burst</span>
+                            <span class="text-white">Dynamic</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Auth Level</span>
+                            <span class="text-white">Mutual TLS</span>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-slate-800 rounded-full w-full">
+                        <div class="h-full bg-purple-500 w-3/4"></div>
+                    </div>
+                </div>
+
+                <!-- Tier 4 -->
+                <div class="glass p-6 rounded-2xl border-slate-800">
+                    <h4 class="text-lg font-bold text-white mb-4">Internal API</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Rate Limit</span>
+                            <span class="text-white">Whitelisted</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Burst</span>
+                            <span class="text-white">N/A</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-500 uppercase">Auth Level</span>
+                            <span class="text-white">VPC / Peering</span>
+                        </div>
+                    </div>
+                    <div class="h-1 bg-slate-800 rounded-full w-full">
+                        <div class="h-full bg-emerald-500 w-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-center">
+            <div>
+                <div class="text-4xl font-bold text-white mb-2 counter" data-target="150">0</div>
+                <div class="text-slate-500 text-sm uppercase tracking-widest font-semibold">APIs Protected</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-white mb-2 counter" data-target="12">0</div>
+                <div class="text-slate-500 text-sm uppercase tracking-widest font-semibold">Billion Req / Month</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-white mb-2 counter" data-target="99">0</div>
+                <div class="text-slate-500 text-sm uppercase tracking-widest font-semibold">Uptime % Guaranteed</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-white mb-2 counter" data-target="40">0</div>
+                <div class="text-slate-500 text-sm uppercase tracking-widest font-semibold">Latency Reduction %</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-slate-900/20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold font-sora text-white">Words From The Frontend</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl border-slate-800 italic text-slate-300">
+                    "The distributed throttling architecture implemented by Limitless API solved our multi-region inventory synchronization issue overnight. Performance is rock solid."
+                    <div class="flex items-center space-x-4 mt-8 not-italic">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div>
+                            <div class="font-bold text-white">David Chen</div>
+                            <div class="text-xs text-slate-500">CTO, NexaPay</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl border-slate-800 italic text-slate-300">
+                    "We were losing thousands to credential stuffing. The abuse detection policies we deployed have blocked 99.8% of malicious attempts without a single false positive."
+                    <div class="flex items-center space-x-4 mt-8 not-italic">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div>
+                            <div class="font-bold text-white">Sarah Jenkins</div>
+                            <div class="text-xs text-slate-500">DevOps Lead, CloudFlow</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-3xl border-slate-800 italic text-slate-300">
+                    "Rate limiting usually adds latency. With this implementation, we actually saw an improvement in overall system stability and faster response times for real users."
+                    <div class="flex items-center space-x-4 mt-8 not-italic">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full"></div>
+                        <div>
+                            <div class="font-bold text-white">Marcus Thorne</div>
+                            <div class="text-xs text-slate-500">Platform Architect, QuantumAPI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-white mb-12">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <details class="glass p-6 rounded-2xl border-slate-800 group" open>
+                <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-white">
+                    What's the difference between Token Bucket and Leaky Bucket?
+                    <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="mt-4 text-slate-400">Token Bucket allows for short bursts of traffic while maintaining a fixed average rate, whereas Leaky Bucket forces a steady, constant flow of requests, which is stricter but can increase latency for legitimate bursts.</p>
+            </details>
+            <details class="glass p-6 rounded-2xl border-slate-800 group">
+                <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-white">
+                    Can you implement rate limiting for GraphQL APIs?
+                    <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="mt-4 text-slate-400">Yes, GraphQL requires cost-based rate limiting rather than simple request counts. I specialize in complexity-based throttling that analyzes query depth and field counts before execution.</p>
+            </details>
+            <details class="glass p-6 rounded-2xl border-slate-800 group">
+                <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-white">
+                    How do you handle DDoS attacks at the application layer?
+                    <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="mt-4 text-slate-400">I use a combination of IP reputation scoring, behavioral analysis, and challenge-response (CAPTCHA/Proof of Work) to filter out botnets before they reach your backend services.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10"></div>
+            <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Secure your APIs before attackers <span class="text-cyan-400">test your limits.</span></h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="contact.html" class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-cyan-50 transition-all shadow-xl">Book a Free Consultation</a>
+                <a href="services.html" class="glass px-10 py-5 rounded-2xl font-bold text-lg border border-slate-700 hover:border-white transition-all">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
+            <div class="col-span-2">
+                <a href="index.html" class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+                </a>
+                <p class="text-slate-500 mb-6 max-w-sm">Leading the industry in API resilience, request shaping, and distributed system protection. Built for the modern cloud.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Services</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-cyan-400">Rate Limiting</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">DDoS Mitigation</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Traffic Shaping</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">API Gateway</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Resources</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-cyan-400">Documentation</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Security Blog</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">API Reference</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Status Page</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
+                <p class="text-xs text-slate-500 mb-4">Get security updates and scaling tips.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Email" class="glass-dark border-slate-800 rounded-l-xl px-4 py-2 text-sm w-full outline-none focus:border-cyan-500">
+                    <button class="bg-cyan-500 text-white px-4 rounded-r-xl hover:bg-cyan-400"><i data-lucide="send" class="w-4 h-4"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-900 flex flex-col md:row justify-between items-center text-slate-600 text-xs">
+            <p>&copy; 2026 Limitless API Consulting. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">SLA</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide and Charts -->
+    <script>
+        lucide.createIcons();
+
+        // Hero Chart
+        var optionsHero = {
+            series: [{
+                name: 'Requests',
+                data: [31, 40, 28, 51, 42, 109, 100, 120, 80, 95, 110, 140]
+            }, {
+                name: 'Blocked',
+                data: [11, 32, 45, 32, 34, 52, 41, 12, 10, 15, 20, 8]
+            }],
+            chart: {
+                height: '100%',
+                type: 'area',
+                toolbar: { show: false },
+                background: 'transparent',
+            },
+            colors: ['#c084fc', '#f43f5e'],
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.45,
+                    opacityTo: 0.05,
+                    stops: [20, 100]
+                }
+            },
+            dataLabels: { enabled: false },
+            stroke: { curve: 'smooth', width: 3 },
+            grid: { borderColor: '#1e293b', strokeDashArray: 4 },
+            xaxis: {
+                categories: ['12:00', '12:05', '12:10', '12:15', '12:20', '12:25', '12:30', '12:35', '12:40', '12:45', '12:50', '12:55'],
+                labels: { style: { colors: '#64748b' } },
+                axisBorder: { show: false },
+                axisTicks: { show: false }
+            },
+            yaxis: {
+                labels: { style: { colors: '#64748b' } }
+            },
+            legend: { show: false },
+            tooltip: { theme: 'dark' }
+        };
+        var heroChart = new ApexCharts(document.querySelector("#hero-chart"), optionsHero);
+        heroChart.render();
+
+        // Monitoring Chart
+        var optionsMon = {
+            series: [{
+                name: 'Throughput',
+                data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43, 56]
+            }],
+            chart: {
+                height: '100%',
+                type: 'bar',
+                toolbar: { show: false },
+                background: 'transparent',
+            },
+            colors: ['#c084fc'],
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    columnWidth: '50%',
+                }
+            },
+            dataLabels: { enabled: false },
+            grid: { borderColor: '#1e293b', strokeDashArray: 4 },
+            xaxis: {
+                labels: { show: false },
+                axisBorder: { show: false },
+                axisTicks: { show: false }
+            },
+            yaxis: { show: false },
+            tooltip: { theme: 'dark' }
+        };
+        var monChart = new ApexCharts(document.querySelector("#monitoring-chart"), optionsMon);
+        monChart.render();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+

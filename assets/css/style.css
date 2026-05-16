@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-dark: #030014;
+    --card-bg: rgba(15, 10, 31, 0.6);
+    --accent-cyan: #a855f7; /* Now Electric Purple */
+    --accent-blue: #4338ca; /* Now Deep Indigo */
+    --accent-purple: #10b981; /* Now Emerald */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.text-gradient-cyan {
+    background: linear-gradient(to right, #a855f7, #4338ca);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+    background: linear-gradient(to right, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-cyan {
+    background: linear-gradient(135deg, #a855f7 0%, #4338ca 100%);
+}
+
+.border-gradient-cyan {
+    border-image: linear-gradient(to right, #a855f7, #4338ca) 1;
+}
+
+.glow-cyan {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.glow-purple {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #030014;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+}
+
+/* Hero Grid Pattern */
+.bg-grid {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+.hero-mesh {
+    background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(67, 56, 202, 0.1) 0%, transparent 40%);
+}

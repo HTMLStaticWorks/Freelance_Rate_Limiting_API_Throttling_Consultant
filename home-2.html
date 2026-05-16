@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Protection | Limitless API Alternative Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 950: '#030014' },
+                        cyan: { 400: '#c084fc', 500: '#a855f7' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- Header/Navbar (Same as Home 1) -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
+                    <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
+                <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="case-studies.html" class="hover:text-cyan-400 transition-colors">Case Studies</a>
+                <a href="blog.html" class="hover:text-cyan-400 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
+                <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="login.html" class="text-slate-300 hover:text-white px-4 py-2">Login</a>
+                <a href="dashboard.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
+                    Deploy Policy
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Split Screen Hero -->
+    <header class="min-h-screen flex items-center pt-20">
+        <div class="w-full grid lg:grid-cols-2">
+            <!-- Left Content -->
+            <div class="flex items-center px-6 md:px-20 py-20 bg-slate-950 relative overflow-hidden">
+                <div class="absolute top-1/4 left-0 w-64 h-64 bg-cyan-500/5 blur-[100px] rounded-full -z-10"></div>
+                <div class="max-w-xl">
+                    <div class="flex items-center space-x-2 text-cyan-400 mb-6">
+                        <div class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Edge-First Security</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold font-sora leading-tight text-white mb-8">
+                        The Future of <span class="text-gradient-cyan">API Resiliency</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-10 leading-relaxed">
+                        Deploy intelligent request shaping and distributed throttling in seconds. Scale globally with sub-millisecond enforcement.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 hover:opacity-90 transition-all">
+                            <span>Get Started</span>
+                            <i data-lucide="zap" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="glass px-8 py-4 rounded-2xl font-bold flex items-center justify-center border border-slate-800 hover:border-slate-600 transition-all">
+                            <span>Documentation</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-16 grid grid-cols-3 gap-8 border-t border-slate-900 pt-8">
+                        <div>
+                            <div class="text-2xl font-bold text-white">0.4ms</div>
+                            <div class="text-xs text-slate-500">Overhead</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">Global</div>
+                            <div class="text-xs text-slate-500">Distribution</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">Multi-Cloud</div>
+                            <div class="text-xs text-slate-500">Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Visual -->
+            <div class="bg-slate-900 relative hidden lg:flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-grid opacity-20"></div>
+                
+                <!-- Animated Network Visual -->
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <!-- Central Node -->
+                    <div class="w-32 h-32 glass rounded-[2.5rem] border-cyan-500/50 flex items-center justify-center relative z-10 glow-cyan animate-pulse">
+                        <i data-lucide="globe" class="text-cyan-400 w-12 h-12"></i>
+                    </div>
+                    
+                    <!-- Pulsing Circles -->
+                    <div class="absolute w-64 h-64 border border-cyan-500/20 rounded-full animate-pulse-slow"></div>
+                    <div class="absolute w-96 h-96 border border-blue-500/10 rounded-full animate-pulse-slow [animation-delay:2s]"></div>
+                    
+                    <!-- Orbiting Nodes -->
+                    <div class="absolute top-1/4 right-1/4 glass p-3 rounded-2xl border-slate-800 animate-float">
+                        <i data-lucide="server" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <div class="absolute bottom-1/4 left-1/4 glass p-3 rounded-2xl border-slate-800 animate-float [animation-delay:1.5s]">
+                        <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
+                    </div>
+                    <div class="absolute top-1/3 left-1/4 glass p-3 rounded-2xl border-slate-800 animate-float [animation-delay:0.5s]">
+                        <i data-lucide="shield" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    
+                    <!-- Traffic Lines (SVG) -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" viewBox="0 0 800 800">
+                        <path d="M400 400 L600 200" stroke="url(#cyan-grad)" stroke-width="2" stroke-dasharray="10,10" class="animate-[dash_10s_linear_infinite]" />
+                        <path d="M400 400 L200 600" stroke="url(#cyan-grad)" stroke-width="2" stroke-dasharray="10,10" class="animate-[dash_10s_linear_infinite]" />
+                        <path d="M400 400 L150 250" stroke="url(#purple-grad)" stroke-width="2" stroke-dasharray="5,15" class="animate-[dash_15s_linear_infinite]" />
+                        <defs>
+                            <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#c084fc;stop-opacity:0" />
+                                <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0" />
+                                <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Infrastructure Architecture Section -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-bold font-sora text-white mb-4">Architecture for Scale</h2>
+                    <p class="text-slate-400">My infrastructure patterns are designed to handle millions of requests without breaking a sweat. Built on top of proven open-source technologies.</p>
+                </div>
+                <div class="flex space-x-2">
+                    <span class="px-4 py-2 glass rounded-full text-xs font-bold text-slate-400">NGINX</span>
+                    <span class="px-4 py-2 glass rounded-full text-xs font-bold text-slate-400">REDIS</span>
+                    <span class="px-4 py-2 glass rounded-full text-xs font-bold text-slate-400">LUA</span>
+                    <span class="px-4 py-2 glass rounded-full text-xs font-bold text-slate-400">ENVOY</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-[2.5rem] border-slate-800">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-8">
+                        <i data-lucide="cpu" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Edge Enforcement</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Execute rate limiting logic as close to the user as possible. My Envoy and NGINX plugins ensure minimal latency impact by using local shared memory for hot-path counters.</p>
+                </div>
+                <div class="glass p-10 rounded-[2.5rem] border-slate-800 relative">
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-purple-500/10 blur-2xl rounded-full"></div>
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-8">
+                        <i data-lucide="share-2" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Distributed Sync</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Asynchronous synchronization with global Redis clusters. Experience consistent rate limiting across multiple regions without blocking the request path.</p>
+                </div>
+                <div class="glass p-10 rounded-[2.5rem] border-slate-800">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-8">
+                        <i data-lucide="bar-chart-3" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Real-time Analytics</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Native integration with Prometheus and Grafana. Monitor your traffic shaped events, 429 response codes, and burst usage in real-time with zero extra agents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Workflow Timeline -->
+    <section class="py-24 bg-slate-900/30 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold font-sora text-center text-white mb-20">Request Lifecycle Visualization</h2>
+            
+            <div class="relative">
+                <!-- Center Line -->
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-slate-800 -translate-y-1/2 hidden md:block"></div>
+                
+                <div class="grid md:grid-cols-4 gap-12 relative">
+                    <!-- Step 1 -->
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 glass rounded-2xl border-slate-700 flex items-center justify-center mx-auto mb-6 bg-slate-950">
+                            <i data-lucide="user" class="text-slate-400 w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Ingress</h4>
+                        <p class="text-xs text-slate-500 px-4">Client request reaches the global edge gateway via Anycast IP.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 glass rounded-2xl border-cyan-500/30 flex items-center justify-center mx-auto mb-6 bg-slate-950 glow-cyan">
+                            <i data-lucide="filter" class="text-cyan-400 w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Evaluation</h4>
+                        <p class="text-xs text-slate-500 px-4">Rate limit policies are checked against JWT claims or API keys in < 0.2ms.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 glass rounded-2xl border-purple-500/30 flex items-center justify-center mx-auto mb-6 bg-slate-950">
+                            <i data-lucide="shield-check" class="text-purple-400 w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Enforcement</h4>
+                        <p class="text-xs text-slate-500 px-4">Tokens are consumed. If limit exceeded, a 429 response is cached and returned.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 glass rounded-2xl border-emerald-500/30 flex items-center justify-center mx-auto mb-6 bg-slate-950">
+                            <i data-lucide="send" class="text-emerald-400 w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">Upstream</h4>
+                        <p class="text-xs text-slate-500 px-4">Legitimate requests are forwarded to the origin server with shaping headers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Threat Intelligence Section -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="glass-dark p-8 rounded-3xl border-slate-800 relative z-10 overflow-hidden">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="font-bold">Live Threat Intelligence</div>
+                        <div class="flex space-x-1">
+                            <div class="w-1 h-1 rounded-full bg-rose-500 animate-ping"></div>
+                            <div class="w-1 h-1 rounded-full bg-rose-500"></div>
+                            <div class="w-1 h-1 rounded-full bg-rose-500"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 glass rounded-xl border-rose-500/20">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="alert-triangle" class="text-rose-500 w-5 h-5"></i>
+                                <span class="text-sm font-mono">192.168.1.1</span>
+                            </div>
+                            <span class="text-[10px] bg-rose-500/10 text-rose-500 px-2 py-0.5 rounded">BLOCKED: STUFFING</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 glass rounded-xl border-amber-500/20">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="shield-alert" class="text-amber-500 w-5 h-5"></i>
+                                <span class="text-sm font-mono">45.22.12.8</span>
+                            </div>
+                            <span class="text-[10px] bg-amber-500/10 text-amber-500 px-2 py-0.5 rounded">SHAPED: SCANNER</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 glass rounded-xl border-slate-800">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="shield" class="text-cyan-500 w-5 h-5"></i>
+                                <span class="text-sm font-mono">104.18.23.11</span>
+                            </div>
+                            <span class="text-[10px] bg-cyan-500/10 text-cyan-500 px-2 py-0.5 rounded">TRUSTED: CLOUDFLARE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-rose-500/10 blur-[80px] rounded-full"></div>
+            </div>
+            
+            <div>
+                <h2 class="text-4xl font-bold font-sora text-white mb-6">Advanced Threat Intelligence</h2>
+                <p class="text-slate-400 mb-8">
+                    My rate limiting isn't just about numbers; it's about context. I integrate with global threat feeds to automatically block known malicious IPs and ASNs before they even touch your application logic.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass p-6 rounded-2xl border-slate-800">
+                        <h4 class="font-bold text-white mb-2">Bot Mitigation</h4>
+                        <p class="text-xs text-slate-500">Identify headless browsers and automated scripts with behavioral fingerprinting.</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border-slate-800">
+                        <h4 class="font-bold text-white mb-2">Geo-Fencing</h4>
+                        <p class="text-xs text-slate-500">Restrict access from high-risk regions or non-business jurisdictions automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Integrations -->
+    <section class="py-24 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold font-sora text-slate-400 mb-12 uppercase tracking-widest">Seamless Integrations</h2>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-20 grayscale opacity-40">
+                <span class="text-3xl font-bold">NGINX</span>
+                <span class="text-3xl font-bold">KONG</span>
+                <span class="text-3xl font-bold">AWS</span>
+                <span class="text-3xl font-bold">AZURE</span>
+                <span class="text-3xl font-bold">FASTLY</span>
+                <span class="text-3xl font-bold">ENVOY</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA (Same as Home 1) -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10"></div>
+            <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Ready to secure your API?</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="contact.html" class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-cyan-50 transition-all shadow-xl">Book Consultation</a>
+                <a href="dashboard.html" class="glass px-10 py-5 rounded-2xl font-bold text-lg border border-slate-700 hover:border-white transition-all">Explore Platform</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
+            <div class="col-span-2">
+                <a href="index.html" class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+                </a>
+                <p class="text-slate-500 mb-6 max-w-sm">Leading the industry in API resilience, request shaping, and distributed system protection. Built for the modern cloud.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:border-cyan-500 transition-all text-slate-400 hover:text-cyan-400"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Services</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-cyan-400">Rate Limiting</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">DDoS Mitigation</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Traffic Shaping</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">API Gateway</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Resources</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-cyan-400">Documentation</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Security Blog</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">API Reference</a></li>
+                    <li><a href="#" class="hover:text-cyan-400">Status Page</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
+                <p class="text-xs text-slate-500 mb-4">Get security updates and scaling tips.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Email" class="glass-dark border-slate-800 rounded-l-xl px-4 py-2 text-sm w-full outline-none focus:border-cyan-500">
+                    <button class="bg-cyan-500 text-white px-4 rounded-r-xl hover:bg-cyan-400"><i data-lucide="send" class="w-4 h-4"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-900 flex flex-col md:row justify-between items-center text-slate-600 text-xs">
+            <p>&copy; 2026 Limitless API Consulting. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">SLA</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-dark', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('glass-dark', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
