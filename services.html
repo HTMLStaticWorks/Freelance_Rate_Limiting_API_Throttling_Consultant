@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark dark">
+<html lang="en" class="scroll-smooth dark dark overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
     </script>
     <link rel='stylesheet' href='assets/css/style.css'>
 </head>
-<body class="bg-slate-950 text-slate-200">
+<body class="bg-slate-950 text-slate-200 overflow-x-hidden">
 
     <!-- Header (Same as index.html) -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6 glass-dark">
@@ -50,9 +50,9 @@
                 <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
                     <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
+                <span class="text-lg lg:text-base xl:text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
             </a>
-            <div class="hidden lg:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center lg:space-x-1 xl:space-x-8 lg:text-[11px] xl:text-base">
                 <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
                 <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
@@ -62,14 +62,14 @@
                 <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
                 <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
             </div>
-            <div class="hidden lg:flex items-center space-x-4">
+            <div class="hidden lg:flex items-center space-x-1 xl:space-x-4">
                 <button id="theme-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300 group" title="Toggle Theme">
                     <i data-lucide="sun" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
                 </button>
                 <button id="rtl-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300" title="Toggle RTL">
                     <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
-                <a href="signup.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
+                <a href="signup.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white lg:px-3 xl:px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan text-[12px] xl:text-base">
                     Sign Up
                 </a>
             </div>
@@ -358,7 +358,7 @@
                 </ul>
             </div>
             
-            <div class="md:col-span-3 lg:col-span-1">
+            <div class="md:col-span-1 lg:col-span-1">
                 <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Get security updates and scaling tips.</p>
                 <form class="flex flex-col space-y-3 max-w-sm">

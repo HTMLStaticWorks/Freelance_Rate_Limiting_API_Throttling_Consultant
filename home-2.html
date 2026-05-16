@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark dark">
+<html lang="en" class="scroll-smooth dark dark overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -46,7 +46,7 @@
     <link rel='stylesheet' href='assets/css/style.css'>
 </head>
 
-<body class="bg-slate-950 text-slate-200">
+<body class="bg-slate-950 text-slate-200 overflow-x-hidden">
 
     <!-- Header/Navbar (Same as Home 1) -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6">
@@ -56,11 +56,11 @@
                     class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center glow-cyan">
                     <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span
+                <span class="text-lg lg:text-base xl:text-xl font-bold tracking-tight text-white font-sora">Limitless<span
                         class="text-cyan-400">API</span></span>
             </a>
 
-            <div class="hidden lg:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center lg:space-x-1 xl:space-x-8 lg:text-[11px] xl:text-base">
                 <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
                 <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
@@ -71,7 +71,7 @@
                 <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
             </div>
 
-            <div class="hidden lg:flex items-center space-x-4">
+            <div class="hidden lg:flex items-center space-x-1 xl:space-x-4">
                 <button id="theme-toggle"
                     class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300 group"
                     title="Toggle Theme">
@@ -83,7 +83,7 @@
                     <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
                 <a href="signup.html"
-                    class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
+                    class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white lg:px-3 xl:px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan text-[12px] xl:text-base">
                     Sign Up
                 </a>
             </div>
@@ -147,7 +147,7 @@
                 <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></div>
                 <span class="text-xs font-bold uppercase tracking-[0.2em]">Edge-First Security</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-bold font-sora leading-tight text-white mb-8">
+            <h1 class="text-3xl sm:text-4xl md:text-8xl font-bold font-sora leading-tight text-white mb-8 break-words">
                 The Future of <br><span class="text-gradient-cyan">API Resiliency</span>
             </h1>
             <p class="text-xl text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
@@ -172,7 +172,7 @@
     <section class="py-24 bg-slate-950">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-4xl font-bold font-sora text-white mb-4">Architecture for Scale</h2>
+                <h2 class="text-3xl md:text-4xl font-bold font-sora text-white mb-4">Architecture for Scale</h2>
                 <p class="text-slate-400 mb-8">My infrastructure patterns are designed to handle millions of requests
                     without breaking a sweat. Built on top of proven open-source technologies.</p>
                 <div class="flex flex-wrap justify-center gap-3">
@@ -280,10 +280,10 @@
     </section>
 
     <!-- Threat Intelligence Section -->
-    <section class="py-24">
+    <section class="py-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div class="relative">
-                <div class="glass-dark p-8 rounded-3xl border-slate-800 relative z-10 overflow-hidden">
+                <div class="glass-dark p-6 md:p-8 rounded-3xl border-slate-800 relative z-10 overflow-hidden">
                     <div class="flex items-center justify-between mb-8">
                         <div class="font-bold">Live Threat Intelligence</div>
                         <div class="flex space-x-1">
@@ -324,12 +324,12 @@
             </div>
 
             <div>
-                <h2 class="text-4xl font-bold font-sora text-white mb-6">Advanced Threat Intelligence</h2>
+                <h2 class="text-3xl md:text-4xl font-bold font-sora text-white mb-6">Advanced Threat Intelligence</h2>
                 <p class="text-slate-400 mb-8">
                     My rate limiting isn't just about numbers; it's about context. I integrate with global threat feeds
                     to automatically block known malicious IPs and ASNs before they even touch your application logic.
                 </p>
-                <div class="grid grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="glass p-6 rounded-2xl border-slate-800">
                         <h4 class="font-bold text-white mb-2">Bot Mitigation</h4>
                         <p class="text-xs text-slate-500">Identify headless browsers and automated scripts with
@@ -350,7 +350,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="w-full lg:w-1/2 order-2 lg:order-1">
-                    <div class="relative group">
+                    <div class="relative group overflow-hidden rounded-3xl">
                         <div
                             class="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 blur-2xl opacity-50 group-hover:opacity-100 transition-all duration-700">
                         </div>
@@ -359,14 +359,14 @@
                             class="relative rounded-3xl border border-slate-800 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
 
                         <!-- Decorative Stats Overlay -->
-                        <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl border-slate-800 hidden md:block">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center">
-                                    <i data-lucide="activity" class="text-emerald-400 w-6 h-6"></i>
+                        <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 glass p-4 md:p-6 rounded-2xl border-slate-800">
+                            <div class="flex items-center space-x-3 md:space-x-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-500/10 rounded-full flex items-center justify-center">
+                                    <i data-lucide="activity" class="text-emerald-400 w-5 h-5 md:w-6 md:h-6"></i>
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-bold text-white">99.999%</div>
-                                    <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Global
+                                    <div class="text-lg md:text-2xl font-bold text-white">99.999%</div>
+                                    <div class="text-[8px] md:text-[10px] text-slate-500 uppercase font-bold tracking-widest">Global
                                         Uptime</div>
                                 </div>
                             </div>
@@ -381,7 +381,7 @@
                         <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">The Architecture of
                             Scale</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-bold font-sora text-white mb-8 leading-tight">Mastering
+                    <h2 class="text-3xl md:text-5xl font-bold font-sora text-white mb-8 leading-tight">Mastering
                         Distributed <span class="text-gradient-purple">API Resilience</span></h2>
                     <p class="text-lg text-slate-400 mb-8 leading-relaxed">
                         I specialize in building globally distributed rate limiting clusters that operate at the edge.
@@ -414,7 +414,7 @@
     </section>
 
     <!-- Platform Integrations -->
-    <section class="py-24 bg-slate-900/20">
+    <section class="py-24 bg-slate-900/20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-2xl font-bold font-sora text-slate-400 mb-12 uppercase tracking-widest">Seamless
                 Integrations</h2>
@@ -430,12 +430,12 @@
     </section>
 
     <!-- Final CTA (Same as Home 1) -->
-    <section class="py-24 px-6">
+    <section class="py-24 px-6 overflow-hidden">
         <div
-            class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
+            class="max-w-7xl mx-auto glass p-8 md:p-20 rounded-[2.5rem] md:rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10">
             </div>
-            <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Ready to secure your API?</h2>
+            <h2 class="text-3xl md:text-6xl font-bold font-sora text-white mb-8">Ready to secure your API?</h2>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
                 <a href="contact.html"
                     class="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-cyan-50 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300">Book
@@ -509,7 +509,7 @@
                 </ul>
             </div>
 
-            <div class="md:col-span-3 lg:col-span-1">
+            <div class="md:col-span-1 lg:col-span-1">
                 <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Newsletter
                 </h4>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Get security updates and scaling tips.</p>

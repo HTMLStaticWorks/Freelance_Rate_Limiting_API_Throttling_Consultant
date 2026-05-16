@@ -79,7 +79,6 @@
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Password</label>
-                            <a href="#" class="text-xs font-bold text-cyan-400 hover:text-cyan-300">Forgot?</a>
                         </div>
                         <div class="relative">
                             <i data-lucide="lock" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 w-4 h-4"></i>
@@ -90,13 +89,21 @@
                         </div>
                     </div>
                     
+                    <div class="flex items-center justify-between py-2">
+                        <div class="flex items-center space-x-2">
+                            <input id="remember" type="checkbox" class="w-4 h-4 rounded border-slate-800 bg-slate-900/50 text-purple-600 focus:ring-purple-500/20 focus:ring-offset-0 transition-all cursor-pointer">
+                            <label for="remember" class="text-xs text-slate-400 cursor-pointer select-none">Remember Me</label>
+                        </div>
+                        <a href="#" class="text-xs font-bold text-cyan-400 hover:text-cyan-300">Forgot Password?</a>
+                    </div>
+                    
                     <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all shadow-lg glow-cyan">
                         Sign In
                     </button>
                 </form>
                 
                 <div class="relative my-10 text-center">
-                    <span class="bg-[#030014] px-4 text-[10px] text-slate-500 uppercase font-bold relative z-10">Or continue with</span>
+                    <span class="bg-slate-950 px-4 text-[10px] text-slate-300 uppercase font-bold relative z-10">Or continue with</span>
                     <div class="absolute top-1/2 left-0 w-full h-[1px] bg-slate-900"></div>
                 </div>
                 

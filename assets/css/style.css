@@ -168,11 +168,20 @@
     left: 30px;
 }
 
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    touch-action: pan-y;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
