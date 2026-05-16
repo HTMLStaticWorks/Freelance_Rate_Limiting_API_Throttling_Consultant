@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark dark">
+<html lang="en" class="scroll-smooth dark overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,7 @@
     </script>
     <link rel='stylesheet' href='assets/css/style.css'>
 </head>
-<body class="bg-slate-950 text-slate-200">
+<body class="bg-slate-950 text-slate-200 overflow-x-hidden">
 
     <!-- Header (Same as index.html) -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6 glass-dark">
@@ -64,11 +64,11 @@
                 <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
             </div>
             <div class="hidden lg:flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2.5 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all duration-300 group" title="Toggle Theme">
+                <button id="theme-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300 group" title="Toggle Theme">
                     <i data-lucide="sun" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
                 </button>
-                <button id="rtl-toggle" class="p-2.5 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all duration-300 font-bold text-sm tracking-widest" title="Toggle RTL">
-                    RTL
+                <button id="rtl-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300" title="Toggle RTL">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
                 <a href="signup.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
                     Sign Up
@@ -96,7 +96,7 @@
                         <span class="font-bold text-sm">Theme</span>
                     </button>
                     <button id="rtl-toggle-mobile" class="flex items-center justify-center space-x-3 text-slate-300 bg-slate-900/50 border border-slate-800 px-4 py-4 rounded-2xl hover:bg-slate-800 hover:text-white hover:border-cyan-500/50 transition-all">
-                        <i data-lucide="languages" class="w-5 h-5"></i>
+                        <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         <span class="font-bold text-sm">RTL</span>
                     </button>
                 </div>
@@ -111,39 +111,39 @@
             <img src="assets/img/cases-hero.png" alt="Success Metrics Visualization" class="w-full h-full object-cover opacity-30">
             <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950"></div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <h1 class="text-5xl md:text-7xl font-bold font-sora text-white mb-6">Proven <span class="text-gradient-cyan">Security</span> Success</h1>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10 overflow-hidden">
+            <h1 class="text-3xl md:text-7xl font-bold font-sora text-white mb-6 break-words">Proven <span class="text-gradient-cyan">Security</span> Success</h1>
             <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">Real-world results for enterprise-scale platforms handling billions of requests.</p>
         </div>
     </header>
 
     <!-- Case Studies List -->
-    <section class="py-24 space-y-24">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="py-24 space-y-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
             
             <!-- Case Study 1 -->
-            <div class="glass rounded-[3rem] border-slate-800 overflow-hidden mb-24 group">
+            <div class="glass rounded-[2rem] md:rounded-[3rem] border-slate-800 overflow-hidden mb-24 group w-full">
                 <div class="grid md:grid-cols-2">
-                    <div class="p-12 space-y-8">
-                        <div class="flex items-center space-x-3 text-cyan-400">
-                            <i data-lucide="landmark" class="w-6 h-6"></i>
-                            <span class="text-sm font-bold uppercase tracking-widest">Fintech API Protection</span>
+                    <div class="p-5 md:p-12 space-y-8 overflow-hidden">
+                        <div class="flex flex-wrap items-center gap-3 text-cyan-400">
+                            <i data-lucide="landmark" class="w-6 h-6 shrink-0"></i>
+                            <span class="text-xs font-bold uppercase tracking-normal md:tracking-widest break-words">Fintech API Protection</span>
                         </div>
-                        <h2 class="text-4xl font-bold font-sora text-white">Securing Global Payment Gateways</h2>
+                        <h2 class="text-2xl md:text-4xl font-bold font-sora text-white break-words">Securing Global Payment Gateways</h2>
                         <div class="space-y-6">
                             <div>
                                 <h4 class="text-white font-bold mb-2">Problem</h4>
-                                <p class="text-slate-400">NexaPay was experiencing intermittent outages during high-volume transaction windows due to uneven traffic distribution and lack of granular throttling.</p>
+                                <p class="text-slate-400 text-xs md:text-base leading-relaxed break-words">NexaPay was experiencing intermittent outages during high-volume transaction windows due to uneven traffic distribution and lack of granular throttling.</p>
                             </div>
                             <div>
                                 <h4 class="text-white font-bold mb-2">Results</h4>
-                                <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 gap-4">
                                     <div class="p-4 glass rounded-2xl border-slate-700">
-                                        <div class="text-2xl font-bold text-white">100%</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white">100%</div>
                                         <div class="text-[10px] text-slate-500 uppercase">Uptime Post-Launch</div>
                                     </div>
                                     <div class="p-4 glass rounded-2xl border-slate-700">
-                                        <div class="text-2xl font-bold text-white">-30%</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white">-30%</div>
                                         <div class="text-[10px] text-slate-500 uppercase">Infra Cost Saved</div>
                                     </div>
                                 </div>
@@ -154,38 +154,38 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                     </div>
-                    <div class="bg-slate-900/50 p-12 flex items-center justify-center border-l border-slate-800">
-                        <div id="chart-fintech" class="w-full h-64"></div>
+                    <div class="bg-slate-900/50 p-5 md:p-12 flex items-center justify-center border-t md:border-t-0 md:border-l border-slate-800 overflow-hidden">
+                        <div id="chart-fintech" class="w-full h-64 overflow-hidden"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Case Study 2 -->
-            <div class="glass rounded-[3rem] border-slate-800 overflow-hidden mb-24 group">
+            <div class="glass rounded-[2rem] md:rounded-[3rem] border-slate-800 overflow-hidden mb-24 group w-full">
                 <div class="grid md:grid-cols-2">
-                    <div class="bg-slate-900/50 p-12 flex items-center justify-center border-r border-slate-800 order-2 md:order-1">
-                        <div id="chart-ecommerce" class="w-full h-64"></div>
+                    <div class="bg-slate-900/50 p-5 md:p-12 flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-800 order-2 md:order-1 overflow-hidden">
+                        <div id="chart-ecommerce" class="w-full h-64 overflow-hidden"></div>
                     </div>
-                    <div class="p-12 space-y-8 order-1 md:order-2">
-                        <div class="flex items-center space-x-3 text-purple-400">
-                            <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-                            <span class="text-sm font-bold uppercase tracking-widest">E-commerce Bot Prevention</span>
+                    <div class="p-5 md:p-12 space-y-8 order-1 md:order-2 overflow-hidden">
+                        <div class="flex flex-wrap items-center gap-3 text-purple-400">
+                            <i data-lucide="shopping-cart" class="w-6 h-6 shrink-0"></i>
+                            <span class="text-xs font-bold uppercase tracking-normal md:tracking-widest break-words">E-commerce Bot Prevention</span>
                         </div>
-                        <h2 class="text-4xl font-bold font-sora text-white">Mitigating Scalper Bots at Scale</h2>
+                        <h2 class="text-2xl md:text-4xl font-bold font-sora text-white break-words">Mitigating Scalper Bots at Scale</h2>
                         <div class="space-y-6">
                             <div>
                                 <h4 class="text-white font-bold mb-2">Problem</h4>
-                                <p class="text-slate-400">A major retailer's product launches were being targeted by automated scalper bots, leading to inventory exhaustion and poor customer experience.</p>
+                                <p class="text-slate-400 text-xs md:text-base leading-relaxed break-words">A major retailer's product launches were being targeted by automated scalper bots, leading to inventory exhaustion and poor customer experience.</p>
                             </div>
                             <div>
                                 <h4 class="text-white font-bold mb-2">Results</h4>
-                                <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 gap-4">
                                     <div class="p-4 glass rounded-2xl border-slate-700">
-                                        <div class="text-2xl font-bold text-white">99.9%</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white">99.9%</div>
                                         <div class="text-[10px] text-slate-500 uppercase">Bot Traffic Filtered</div>
                                     </div>
                                     <div class="p-4 glass rounded-2xl border-slate-700">
-                                        <div class="text-2xl font-bold text-white">0</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white">0</div>
                                         <div class="text-[10px] text-slate-500 uppercase">False Positives</div>
                                     </div>
                                 </div>
@@ -222,7 +222,7 @@
     </section>
 
     <!-- Global Impact Section -->
-    <section class="py-24 px-6 relative overflow-hidden">
+    <section class="py-24 px-4 md:px-6 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full bg-grid opacity-10"></div>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
@@ -234,10 +234,10 @@
             
             <div class="glass p-4 md:p-8 rounded-[3rem] border-slate-800 relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 blur-xl opacity-50 group-hover:opacity-100 transition-all"></div>
-                <img src="global_data_flow_map_1778909484263.png" alt="Global Data Flow Map" class="relative rounded-[2.5rem] w-full shadow-2xl">
+                <img src="assets/img/global-map.png" alt="Global Data Flow Map" class="relative rounded-[2.5rem] w-full shadow-2xl">
                 
                 <!-- Floating KPI Cards -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                     <div class="glass p-6 rounded-2xl border-slate-800 text-center">
                         <div class="text-2xl font-bold text-white mb-1">0.8ms</div>
                         <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Avg Edge Latency</div>
@@ -260,7 +260,7 @@
     </section>
 
     <!-- CTA Banner -->
-    <section class="py-24 px-6">
+    <section class="py-24 px-4 md:px-6">
         <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10"></div>
             <h2 class="text-4xl md:text-6xl font-bold font-sora text-white mb-8">Secure your APIs before attackers <span class="text-cyan-400">test your limits.</span></h2>

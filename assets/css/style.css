@@ -316,14 +316,16 @@ body {
                 radial-gradient(circle at 80% 20%, rgba(67, 56, 202, 0.1) 0%, transparent 40%);
 }
 
-/* Premium Navbar Toggle Buttons */
-#theme-toggle, #rtl-toggle, #theme-toggle-mobile, #rtl-toggle-mobile {
+#theme-toggle, #rtl-toggle, #theme-toggle-mobile, #rtl-toggle-mobile, .toggle-btn-standard {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 10px;
+    padding: 0 !important;
 }
 
 #theme-toggle:hover, #rtl-toggle:hover, #theme-toggle-mobile:hover, #rtl-toggle-mobile:hover {

@@ -53,7 +53,7 @@
                 </div>
                 <span class="text-xl font-bold tracking-tight text-white font-sora">Limitless<span class="text-cyan-400">API</span></span>
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center space-x-8">
                 <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
                 <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
                 <a href="about.html" class="text-cyan-400 transition-colors">About</a>
@@ -64,11 +64,11 @@
                 <a href="dashboard.html" class="hover:text-cyan-400 transition-colors">Dashboard</a>
             </div>
             <div class="hidden lg:flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2.5 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all duration-300 group" title="Toggle Theme">
+                <button id="theme-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300 group" title="Toggle Theme">
                     <i data-lucide="sun" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
                 </button>
-                <button id="rtl-toggle" class="p-2.5 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all duration-300 font-bold text-sm tracking-widest" title="Toggle RTL">
-                    RTL
+                <button id="rtl-toggle" class="text-slate-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-300" title="Toggle RTL">
+                    <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
                 <a href="signup.html" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan">
                     Sign Up
@@ -99,7 +99,7 @@
                         <span class="font-bold text-sm">Theme</span>
                     </button>
                     <button id="rtl-toggle-mobile" class="flex items-center justify-center space-x-3 text-slate-300 bg-slate-900/50 border border-slate-800 px-4 py-4 rounded-2xl hover:bg-slate-800 hover:text-white hover:border-cyan-500/50 transition-all">
-                        <i data-lucide="languages" class="w-5 h-5"></i>
+                        <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         <span class="font-bold text-sm">RTL</span>
                     </button>
                 </div>
@@ -115,21 +115,21 @@
             <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950"></div>
         </div>
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <h1 class="text-5xl md:text-7xl font-bold font-sora text-white mb-6">Securing the <span class="text-gradient-cyan">Global Request</span> Stream</h1>
+            <h1 class="text-4xl md:text-7xl font-bold font-sora text-white mb-6">Securing the <span class="text-gradient-cyan">Global Request</span> Stream</h1>
             <p class="text-xl text-slate-400 max-w-2xl mx-auto">I'm Alex Thorne, a specialized infrastructure consultant dedicated to solving the most complex API traffic challenges for the world's most demanding platforms.</p>
         </div>
     </header>
 
     <!-- Consultant Intro Section -->
-    <section class="py-24">
+    <section class="py-24 overflow-x-hidden">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="relative">
                 <div class="aspect-square glass rounded-[3rem] border-slate-800 relative overflow-hidden group">
                     <img src="assets/img/consultant.png" alt="Alex Thorne" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
-                <div class="absolute -bottom-10 -right-10 glass p-8 rounded-3xl border-cyan-500/30 animate-float">
-                    <div class="text-4xl font-bold text-white mb-2">10+</div>
-                    <div class="text-xs text-slate-500 uppercase font-bold tracking-widest">Years Experience</div>
+                <div class="absolute -bottom-10 right-0 md:-right-10 glass p-6 md:p-8 rounded-2xl md:rounded-3xl border-cyan-500/30 animate-float">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">10+</div>
+                    <div class="text-[10px] md:text-xs text-slate-500 uppercase font-bold tracking-widest">Years Experience</div>
                 </div>
             </div>
             
@@ -166,17 +166,17 @@
                     <p class="text-xs text-slate-500 mt-2">Custom Lua modules for high-performance edge logic.</p>
                 </div>
                 <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
-                    <i data-lucide="database" class="text-purple-400 mx-auto mb-4"></i>
+                    <i data-lucide="database" class="w-8 h-8 text-purple-400 mx-auto mb-4"></i>
                     <h4 class="font-bold text-white">Redis/Valkey</h4>
                     <p class="text-xs text-slate-500 mt-2">Distributed state management for global rate syncing.</p>
                 </div>
                 <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
-                    <i data-lucide="cloud" class="text-blue-400 mx-auto mb-4"></i>
+                    <i data-lucide="cloud" class="w-8 h-8 text-blue-400 mx-auto mb-4"></i>
                     <h4 class="font-bold text-white">Envoy Proxy</h4>
                     <p class="text-xs text-slate-500 mt-2">Service mesh traffic management and Wasm plugins.</p>
                 </div>
                 <div class="p-8 glass rounded-[2rem] border-slate-800 text-center">
-                    <i data-lucide="layout" class="text-emerald-400 mx-auto mb-4"></i>
+                    <i data-lucide="layout" class="w-8 h-8 text-emerald-400 mx-auto mb-4"></i>
                     <h4 class="font-bold text-white">API Gateways</h4>
                     <p class="text-xs text-slate-500 mt-2">Kong, Tyk, and AWS/GCP native gateway optimization.</p>
                 </div>
