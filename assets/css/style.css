@@ -15,6 +15,28 @@
     --text-main: #0f172a;
 }
 
+/* Typography Weight Hierarchy Constraints */
+h1, h2, h3, h4, h5, h6,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    font-weight: 500 !important;
+}
+
+p, li, select, input, textarea {
+    font-weight: 400 !important;
+}
+
+/* Cap all bold/semibold Tailwind utility classes to 500 for subheadings and emphasis */
+.font-semibold,
+.font-medium,
+.font-bold {
+    font-weight: 500 !important;
+}
+
+/* Allow strong tags to have inline emphasis up to 500 */
+strong, b {
+    font-weight: 500 !important;
+}
+
 /* Light Theme Overrides */
 [data-theme="light"] body {
     background-color: #f8fafc !important;
@@ -95,6 +117,24 @@
     color: #0f172a !important;
 }
 
+/* Keep text white on dark/gradient backgrounds in light mode */
+[data-theme="light"] .bg-gradient-to-r,
+[data-theme="light"] .bg-gradient-to-r *,
+[data-theme="light"] .bg-rose-500,
+[data-theme="light"] .bg-rose-500 *,
+[data-theme="light"] .bg-purple-600,
+[data-theme="light"] .bg-purple-600 *,
+[data-theme="light"] .bg-indigo-600,
+[data-theme="light"] .bg-indigo-600 *,
+[data-theme="light"] .bg-purple-500,
+[data-theme="light"] .bg-purple-500 *,
+[data-theme="light"] .bg-indigo-500,
+[data-theme="light"] .bg-indigo-500 *,
+[data-theme="light"] .bg-slate-800,
+[data-theme="light"] .bg-slate-800 * {
+    color: #ffffff !important;
+}
+
 [data-theme="light"] p,
 [data-theme="light"] .text-slate-400,
 [data-theme="light"] .text-slate-500,
@@ -127,6 +167,17 @@
     background: rgba(168, 85, 247, 0.1) !important;
     color: #a855f7 !important;
 }
+
+/* Glass buttons hover styling in light mode */
+[data-theme="light"] a.glass:hover,
+[data-theme="light"] button.glass:hover,
+[data-theme="light"] a.glass:hover *,
+[data-theme="light"] button.glass:hover * {
+    border-color: #a855f7 !important;
+    background-color: rgba(168, 85, 247, 0.08) !important;
+    color: #a855f7 !important;
+}
+
 
 /* Active Nav Highlighting */
 .nav-link-active {
@@ -170,8 +221,8 @@
     text-align: right;
 }
 
-[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
+[dir="rtl"] [class*="space-x-"] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1 !important;
 }
 
 [dir="rtl"] i[data-lucide="chevron-right"] {
@@ -428,3 +479,11 @@ body {
     box-shadow: 0 10px 25px rgba(168, 85, 247, 0.2);
 }
 
+/* CTA section background style for visual distinction above footer */
+.cta-section-bg {
+    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.05) 0%, transparent 70%) !important;
+}
+
+[data-theme="light"] .cta-section-bg {
+    background: linear-gradient(135deg, #f5f3ff 0%, #e0f2fe 100%) !important;
+}

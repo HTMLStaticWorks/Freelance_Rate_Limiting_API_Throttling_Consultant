@@ -22,7 +22,7 @@
         }
     </script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -48,8 +48,8 @@
 
 <body class="bg-slate-950 text-slate-200 overflow-x-hidden">
 
-    <!-- Header/Navbar (Same as Home 1) -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6">
+    <!-- Header/Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-4 md:px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2">
                 <div
@@ -59,9 +59,9 @@
                 <span class="text-lg lg:text-base xl:text-xl font-bold tracking-tight text-white font-sora">FLUX</span>
             </a>
 
+            <!-- Desktop Nav -->
             <div class="hidden xl:flex items-center xl:space-x-8 text-base">
                 <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
-                <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
                 <a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a>
                 <a href="case-studies.html" class="hover:text-cyan-400 transition-colors">Case Studies</a>
@@ -81,12 +81,13 @@
                     title="Toggle RTL">
                     <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
-                <a href="signup.html"
+                <a href="contact.html"
                     class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white lg:px-3 xl:px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan text-[12px] xl:text-base">
-                    Sign Up
+                    Contact Me
                 </a>
             </div>
 
+            <!-- Mobile Menu Btn -->
             <button id="mobile-menu-btn" class="xl:hidden text-slate-300">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
@@ -98,9 +99,6 @@
             <div class="flex flex-col space-y-6">
                 <a href="index.html"
                     class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home</a>
-                <a href="home-2.html"
-                    class="text-xl font-bold text-cyan-400 hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home
-                    2</a>
                 <a href="about.html"
                     class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">About</a>
                 <a href="services.html"
@@ -125,43 +123,41 @@
                         <i data-lucide="arrow-left-right" class="w-6 h-6"></i>
                     </button>
                 </div>
-                <a href="signup.html"
-                    class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-4 rounded-2xl text-center font-bold text-lg shadow-lg shadow-purple-500/20">Sign
-                    Up Now</a>
+                <a href="contact.html"
+                    class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-4 rounded-2xl text-center font-bold text-lg shadow-lg shadow-purple-500/20">Book a Consultation</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Standardized) -->
-    <header class="pt-48 pb-32 relative overflow-hidden min-h-[80vh] flex items-center">
+    <!-- Personalized Hero Section -->
+    <header class="pt-48 pb-32 relative overflow-hidden min-h-[85vh] flex items-center">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.pexels.com/photos/12198537/pexels-photo-12198537.jpeg" alt="Edge Protection"
-                class="w-full h-full object-cover opacity-40 animate-[pulse-slow_12s_infinite]">
+                class="w-full h-full object-cover opacity-30 animate-[pulse-slow_12s_infinite]">
             <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10 animate-on-scroll">
             <div class="flex justify-center items-center space-x-2 text-cyan-400 mb-8">
                 <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em]">Edge-First Security</span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em]">Alex Thorne | Freelance API Security</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl md:text-8xl font-bold font-sora leading-tight text-white mb-8 break-words">
-                The Future of <br><span class="text-gradient-cyan">API Resiliency</span>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold font-sora leading-tight text-white mb-8 break-words">
+                The Future of <span class="text-gradient-cyan">API Resiliency</span>
             </h1>
             <p class="text-xl text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
-                Deploy intelligent request shaping and distributed throttling in seconds. Scale globally with
-                sub-millisecond enforcement.
-            </p>
+                Hi, I'm Alex. I configure and deploy intelligent edge-level rate limiting and request throttling configs that keep modern API systems stable under extreme loads.
+              </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="signup.html"
+                <a href="contact.html"
                     class="w-full max-w-xs sm:w-auto bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-10 py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 hover:scale-105 hover:-translate-y-1 transition-all shadow-xl shadow-purple-500/20">
-                    <span>Get Started</span>
+                    <span>Book a Consultation</span>
                     <i data-lucide="zap" class="w-5 h-5"></i>
                 </a>
-                <a href="contact.html"
+                <a href="services.html"
                     class="w-full max-w-xs sm:w-auto glass px-10 py-5 rounded-2xl font-bold flex items-center justify-center border border-white/10 hover:border-white/30 hover:bg-white/5 hover:scale-105 hover:-translate-y-1 transition-all">
-                    <span>Book Demo</span>
+                    <span>My Services</span>
                 </a>
             </div>
         </div>
@@ -429,7 +425,7 @@
     </section>
 
     <!-- Final CTA (Same as Home 1) -->
-    <section class="py-24 px-6 overflow-hidden">
+    <section class="py-24 px-6 overflow-hidden cta-section-bg">
         <div
             class="max-w-7xl mx-auto glass p-8 md:p-20 rounded-[2.5rem] md:rounded-[3rem] border-cyan-500/20 relative overflow-hidden text-center">
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 to-purple-500/5 -z-10">
@@ -458,8 +454,7 @@
                     <span
                         class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-sora">FLUX</span>
                 </a>
-                <p class="text-slate-500 mb-6 max-w-sm">Leading the industry in API resilience, request shaping, and
-                    distributed system protection. Built for the modern cloud.</p>
+                <p class="text-slate-500 mb-6 max-w-sm">Elite API resilience, request shaping, and distributed system protection consulting by Alex Thorne. Built for the modern cloud.</p>
                 <div class="flex space-x-4">
                     <a href="#" class="social-icon-premium" title="Facebook">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

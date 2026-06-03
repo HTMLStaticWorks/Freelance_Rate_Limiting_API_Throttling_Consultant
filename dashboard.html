@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Flux Management</title>
+    <title>Dashboard | Flux Portal</title>
     <link rel='icon' type='image/png' href='assets/img/favicon.png'>
     <script src="https://cdn.tailwindcss.com"></script>
         <script>
@@ -240,10 +240,10 @@
                             <div id="traffic-main-chart" class="flex-grow"></div>
                         </div>
                         
-                        <div class="glass p-8 rounded-3xl border-slate-800 h-[400px] flex flex-col">
-                            <h3 class="font-bold text-white mb-8">Regional Distribution</h3>
-                            <div id="regional-chart" class="flex-grow"></div>
-                            <div class="grid grid-cols-2 gap-4 mt-4">
+                        <div class="glass p-6 rounded-3xl border-slate-800 h-[400px] flex flex-col justify-between">
+                            <h3 class="font-bold text-white mb-2">Regional Distribution</h3>
+                            <div id="regional-chart" class="min-h-0 flex-grow flex items-center justify-center"></div>
+                            <div class="grid grid-cols-2 gap-4 mt-2">
                                 <div class="flex items-center space-x-2">
                                     <div class="w-2 h-2 rounded-full bg-cyan-500"></div>
                                     <span class="text-xs text-slate-400">US-East (45%)</span>
@@ -517,7 +517,7 @@
             if (document.querySelector("#regional-chart")) {
                 new ApexCharts(document.querySelector("#regional-chart"), {
                     series: [45, 30, 15, 10],
-                    chart: { type: 'donut', height: '100%', background: 'transparent' },
+                    chart: { type: 'donut', height: 220, background: 'transparent' },
                     colors: ['#c084fc', '#a855f7', '#3b82f6', '#10b981'],
                     labels: ['US-East', 'EU-West', 'AS-East', 'Other'],
                     stroke: { show: false },
