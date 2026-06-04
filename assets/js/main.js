@@ -102,8 +102,13 @@
             const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
             
             document.querySelectorAll('nav a').forEach(link => {
-                // Skip brand/logo link
-                if (link.querySelector('.font-sora')) return;
+                // Skip brand/logo link or CTA button links (identified by gradients, rounding, or branding selectors)
+                if (link.querySelector('.font-sora') || 
+                    link.classList.contains('bg-gradient-to-r') || 
+                    link.classList.contains('rounded-full') || 
+                    link.classList.contains('rounded-2xl')) {
+                    return;
+                }
 
                 const href = link.getAttribute('href');
                 if (href === filename) {

@@ -74,6 +74,7 @@
             <!-- Desktop Nav -->
             <div class="hidden xl:flex items-center xl:space-x-8 text-base">
                 <a href="index.html" class="text-cyan-400 font-medium transition-colors">Home</a>
+                <a href="home-2.html" class="hover:text-cyan-400 transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
                 <a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a>
                 <a href="case-studies.html" class="hover:text-cyan-400 transition-colors">Case Studies</a>
@@ -93,9 +94,9 @@
                     title="Toggle RTL">
                     <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                 </button>
-                <a href="contact.html"
+                <a href="signup.html"
                     class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white lg:px-3 xl:px-8 py-2.5 rounded-full font-medium transition-all shadow-lg glow-cyan text-[12px] xl:text-base">
-                    Contact Me
+                    Get Demo
                 </a>
             </div>
 
@@ -111,6 +112,8 @@
             <div class="flex flex-col space-y-6">
                 <a href="index.html"
                     class="text-xl font-bold text-cyan-400 hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home</a>
+                <a href="home-2.html"
+                    class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">Home 2</a>
                 <a href="about.html"
                     class="text-xl font-bold text-white hover:text-cyan-400 transition-colors py-2 border-b border-slate-900">About</a>
                 <a href="services.html"
@@ -146,26 +149,26 @@
         <div class="absolute inset-0 z-0">
             <img src="https://images.pexels.com/photos/30767251/pexels-photo-30767251.jpeg" alt="API Network"
                 class="w-full h-full object-cover opacity-20 animate-[pulse-slow_15s_infinite]">
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/95 via-slate-950/60 to-slate-950"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950"></div>
         </div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <!-- Left: Message and Value Props -->
-                <div class="lg:col-span-7 space-y-8 text-left">
+                <div class="lg:col-span-7 space-y-8 text-center flex flex-col items-center">
                     <div class="inline-flex items-center space-x-2 py-1.5 px-4 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold border border-cyan-500/20 backdrop-blur-md">
                         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                         <span>Alex Thorne | Independent API Architect</span>
                     </div>
                     
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-sora text-white leading-tight">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-sora text-white leading-tight text-center">
                         Protect your core APIs from <span class="text-gradient-cyan">abuse</span> without adding <span class="text-gradient-purple">latency.</span>
                     </h1>
                     
-                    <p class="text-lg text-slate-400 leading-relaxed max-w-2xl">
+                    <p class="text-lg text-slate-400 leading-relaxed max-w-2xl text-center">
                         Hi, I'm Alex. I engineer high-performance rate limiting and request throttling systems for distributed applications. I help platforms handle extreme traffic surges, stop API resource abuse, and slash cloud database bills—working directly with your engineering team as a specialized freelance partner.
                     </p>
                     
-                    <div class="space-y-4 pt-2">
+                    <div class="space-y-4 pt-2 text-left w-full max-w-2xl">
                         <div class="flex items-start space-x-3">
                             <div class="w-6 h-6 bg-cyan-500/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                                 <i data-lucide="zap" class="text-cyan-400 w-3.5 h-3.5"></i>
@@ -180,7 +183,7 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center w-full">
                         <a href="contact.html"
                             class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-center shadow-lg shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
                             Book a Strategy Call
@@ -466,7 +469,7 @@
                 <!-- Card 1: Audits -->
                 <div class="glass p-8 rounded-3xl border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between h-full">
                     <div>
-                        <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                        <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors mx-auto">
                             <i data-lucide="terminal" class="text-cyan-400 w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-4">Infrastructure Traffic Audits</h3>
@@ -485,7 +488,7 @@
                 <!-- Card 2: Custom Architecture -->
                 <div class="glass p-8 rounded-3xl border-slate-800 hover:border-purple-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between h-full">
                     <div>
-                        <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                        <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors mx-auto">
                             <i data-lucide="layers" class="text-purple-400 w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-4">Bespoke Traffic Control Design</h3>
@@ -504,7 +507,7 @@
                 <!-- Card 3: Emergency Hardening -->
                 <div class="glass p-8 rounded-3xl border-slate-800 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between h-full">
                     <div>
-                        <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors mx-auto">
                             <i data-lucide="shield-alert" class="text-blue-400 w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-4">DDoS & Bot Mitigation</h3>
@@ -532,7 +535,7 @@
                 <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">A transparent, developer-first engineering process that guarantees professional results with zero friction.</p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
                 <!-- Step 1 -->
                 <div class="glass p-6 rounded-2xl border-slate-800 hover:border-cyan-500/20 transition-all duration-300 text-center relative group">
                     <div class="absolute top-4 right-6 text-5xl font-black text-slate-800/20 group-hover:text-cyan-500/10 transition-colors">01</div>
@@ -635,7 +638,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <div class="lg:w-1/2">
-                    <h2 class="text-4xl font-bold font-sora text-white mb-6">Observability Meets Enforcement</h2>
+                    <h2 class="text-4xl font-bold font-sora text-white mb-6 text-center">Observability Meets Enforcement</h2>
                     <p class="text-slate-400 text-lg mb-8">
                         My custom dashboard solutions provide deep insights into every request lifecycle. See exactly
                         why, where, and when requests are being shaped or blocked.

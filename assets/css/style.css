@@ -198,7 +198,19 @@ strong, b {
 }
 
 [data-theme="light"] .nav-link-active {
-    color: #a855f7 !important;
+    color: #7c3aed !important;
+}
+
+/* Prevent active nav styling from affecting gradient and custom buttons */
+.nav-link-active.bg-gradient-to-r,
+.nav-link-active[class*="bg-"],
+[data-theme="light"] .nav-link-active.bg-gradient-to-r,
+[data-theme="light"] .nav-link-active[class*="bg-"] {
+    color: #ffffff !important;
+}
+.nav-link-active.bg-gradient-to-r::after,
+.nav-link-active[class*="bg-"]::after {
+    display: none !important;
 }
 
 /* RTL Support */
